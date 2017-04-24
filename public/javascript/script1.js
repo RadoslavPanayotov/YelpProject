@@ -10,6 +10,9 @@ app.controller('login', function ($scope, $http) {
             data: $scope.user,
             withCredentials: true,
             headers:  {'Content-Type': 'application/x-www-form-urlencoded'}
+        })
+        .success(function (data){
+            console.log(data)
         });
         // console.log($scope.user.password + " " + $scope.user.username);
         // var x = JSON.stringify($scope.user);
