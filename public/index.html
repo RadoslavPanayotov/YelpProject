@@ -4,17 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <script src="../javascript/angular/angular.min.js"></script>
+    <script src="./javascript/angular/angular.min.js"></script>
 </head>
 
 <body>
-    <form action="">
+<form ng-controller="login">
         <label for="username">Username</label>
+        <input id="username" ng-model="user.username" name="username" type="text" /> <br/> <br/>
         <label for="password">Password</label>
-        <input name="username" type="text" />
-        <input name="password" type="password" />
-        <button id="logBut" type="submit">LOGIN</button>
+        <input id="password" ng-model="user.password" name="password" type="password" /> <br/> <br/>
+        <button id="logBut" ng-click="logMe()"type="submit">LOGIN</button>
     </form>
+    <script src="./javascript/script1.js"></script>
 </body>
 
 </html>
