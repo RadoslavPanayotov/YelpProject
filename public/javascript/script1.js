@@ -9,7 +9,7 @@ app.controller('login', function ($scope, $http) {
         $http({
             // 'https://projectxnr.herokuapp.com/users', x
             url: 'https://projectxnr.herokuapp.com/users',
-            method: "GET",
+            method: "POST",
             data: $scope.user,
             withCredentials: true,
             headers: {
