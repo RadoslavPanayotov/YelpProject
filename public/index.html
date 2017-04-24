@@ -7,8 +7,8 @@
     <script src="./javascript/angular/angular.min.js"></script>
 </head>
 
-<body>
-<form ng-controller="login" name="myForm" method="post" ng-submit="logMe()">
+<body ng-app="myApp">
+    <form ng-controller="login" name="myForm" method="post" ng-submit="logMe()">
         <label for="username">Username</label>
         <input id="username" ng-model="user.username" name="username" type="text" /> <br/> <br/>
         <label for="password">Password</label>
