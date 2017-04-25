@@ -11,11 +11,12 @@
 </head>
 
 <body ng-app="myApp">
-    <a href="#login">Login</a>
-    <a href="#register">Register</a>
+    <div ng-show="isLogged">
+        <a href="#login">Login</a>
+        <a href="#register">Register</a>
 
-    <div ng-view></div>
-
+        <div ng-view></div>
+    </div>
     <script src="./javascript/script1.js"></script>
      <script src="./javascript/controllers/loginController.js"></script>
        <script src="./javascript/controllers/registerController.js"></script>

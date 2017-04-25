@@ -1,5 +1,5 @@
 app.controller('register', function ($scope, $http) {
-    $scope.regMe = function () {
+  /*  $scope.regMe = function () {
         // $http.get('https://projectxnr.herokuapp.com/users').then(function (response) {
         //    console.log(response.data);
         // });
@@ -10,11 +10,12 @@ app.controller('register', function ($scope, $http) {
             url: 'https://projectxnr.herokuapp.com/users',
             method: "POST",
             data: x,
-            withCredentials: true,
-            headers:  {'Content-Type': 'application/x-www-form-urlencoded'}
+            withCredentials: true
         })
-        .success(function (data){
+        .than(function (data){
             console.log(data)
+        }).catch(function(error){
+
         })
 
         // $http.post('http://localhost:3000/users', x).then(function (response) {
@@ -23,6 +24,6 @@ app.controller('register', function ($scope, $http) {
         //     console.log("Error" + response.data);
         // }));
     }
-
+*/
     $scope.neshto = 'Tova ti e home stranicata';
 })

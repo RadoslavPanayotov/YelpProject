@@ -1,5 +1,7 @@
 var app = angular.module('myApp', ['ngRoute']);
-
+app.run(function($rootScope){
+    $rootScope.isLogged = true;
+});
 app.config(function($routeProvider) {
     $routeProvider.when('/login', {
         templateUrl: "../views/login.htm",
@@ -11,3 +13,13 @@ app.config(function($routeProvider) {
     });
 });
 
+// function request(url, method, data){
+    
+//     $http({
+//             url: url,
+//             method: method,
+//             data: data,
+//             withCredentials: true,
+           
+//         })
+// }///////QUESTION FOR THE BOSS/////////////////
