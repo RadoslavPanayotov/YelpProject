@@ -7,11 +7,11 @@ app.controller('login', function ($scope, $http) {
         var x = JSON.stringify($scope.user);
         //console.log(x);
         $http({
-            url: 'https://projectxnr.herokuapp.com/users',
+            url: 'http://localhost:3000/users',
             method: "POST",
             data: x,
             withCredentials: true,
-            headers:  {'Content-Type': 'application/x-www-form-urlencoded'}
+          
         })
         .success(function (data){
             console.log(data)
