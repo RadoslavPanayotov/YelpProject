@@ -5,18 +5,21 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <script src="./javascript/angular/angular.min.js"></script>
+     <script src="./javascript/angular-route/angular-route.js"></script>
+     
+    <script src="./javascript/angular-route/angular-route.min.js"></script>
 </head>
 
 <body ng-app="myApp">
-    <form ng-controller="login" name="myForm" ng-submit="logMe()">
-        <label for="username">Username</label>
-        <input id="username" ng-model="user.username" name="username" type="text" /> <br/> <br/>
-        <label for="password">Password</label>
-        <input id="password" ng-model="user.password" name="password" type="password" /> <br/> <br/>
-        <button id="logBut" type="submit">LOGIN</button>
-        <button id="regBut" type="submit">REGISTER</button>
-    </form>
+    <a href="#login">Login</a>
+    <a href="#register">Register</a>
+
+    <div ng-view></div>
+
     <script src="./javascript/script1.js"></script>
+     <script src="./javascript/controllers/loginController.js"></script>
+       <script src="./javascript/controllers/registerController.js"></script>
+
 </body>
 
 </html>
