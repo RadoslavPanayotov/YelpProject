@@ -4,19 +4,21 @@ app.controller('login', function ($scope, $http) {
         // $http.get('https://projectxnr.herokuapp.com/users').then(function (response) {
         //    console.log(response.data);
         // });
+        //console.log($scope.user);
+        var x = JSON.stringify($scope.user);
+        //console.log(x);
         $http({
             url: 'https://projectxnr.herokuapp.com/users',
             method: "POST",
-            data: $scope.user,
+            data: x,
             withCredentials: true,
             headers:  {'Content-Type': 'application/x-www-form-urlencoded'}
         })
         .success(function (data){
             console.log(data)
         });
-        // console.log($scope.user.password + " " + $scope.user.username);
-        // var x = JSON.stringify($scope.user);
-        // $http.post('https://projectxnr.herokuapp.com/users', x).then(function (response) {
+
+        // $http.post('http://localhost:3000/users', x).then(function (response) {
         //     console.log(response.data);
         // }, (function errorCallback(response) {
         //     console.log("Error" + response.data);
