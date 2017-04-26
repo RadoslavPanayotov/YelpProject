@@ -1,4 +1,4 @@
-app.controller('register', function ($scope,$rootScope, $http) {
+app.controller('register', function ($scope, $rootScope, userService) {
     // If scope.user.type = false means normal user, else business user
     $scope.user = {};
     $scope.user.type = false;
@@ -24,15 +24,8 @@ app.controller('register', function ($scope,$rootScope, $http) {
             $scope.errorPassMessage = "The password must be at least 5 characters!";
         }
         // post request for creating new user
-        console.log($scope.user);
-        $http({
-            url: 'http://localhost:3000/createUsers',
-            method: "POST",
-            data: JSON.stringify($scope.user),
-            withCredentials: true
-        })
-        .then(function (data){
-               console.log(data);
+      userService.postReq('http://localhost:3000/createUsers','POST',JSON.stringify($scope.user)).then(function (data){
+            console.log(data);
             if(data.data.value == "true"){ 
                 $rootScope.isLogged = false;
              }else{

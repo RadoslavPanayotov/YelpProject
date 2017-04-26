@@ -10,7 +10,8 @@ app.controller('login', function ($scope, userService, $rootScope) {
           
         // })
         console.log(userService);
-        userService.postReq('http://localhost:3000/users','POST',JSON.stringify($scope.user)).then(function (data){    console.log(data);        
+        userService.postReq('http://localhost:3000/users','POST',JSON.stringify($scope.user)).then(function (data){    
+            console.log(data);        
             if(data.data.value == "true"){ 
                 $rootScope.isLogged = false;
              }else{
