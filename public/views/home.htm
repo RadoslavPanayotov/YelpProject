@@ -1,7 +1,5 @@
-<div ng-controller="searchControler">
-    <form name="searchForm" ng-submit="">
+    <form name="searchForm" ng-submit="search()">
         <label for="searchField">Search</label>
         <input id="searchField" ng-model="data.search" name="mainSearch" type="text" />
         <button id="searchBut" type="submit">Search</button>
     </form>
-</div>

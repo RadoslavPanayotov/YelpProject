@@ -11,7 +11,12 @@ app.config(function($routeProvider) {
     .when('/register', {
         templateUrl: "../views/register.htm",
         controller: 'register'
-    });
+    })
+    .when('/register', {
+        templateUrl: "../views/register.htm",
+        controller: 'register'
+    })
+    ;
 });
 
 // function request(url, method, data){
