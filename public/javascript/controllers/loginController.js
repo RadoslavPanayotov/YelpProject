@@ -16,15 +16,16 @@ app.controller('login', function ($scope, $http, $rootScope) {
           
         })
         .then(function (data){
-            console.log(data);
+            
             if(data.data.value == "true"){ 
                 $rootScope.isLogged = false;
              }else{
                 $scope.errorMessage = "Username or password are invalid!" 
              }
            
-        }).catch(function(error){
-            
+        }).catch(function(error, status){
+            $scope.data.error = {message: error, status: status};
+            console.log($scope.data.error.status);
         });
         // $http.post('http://localhost:3000/users', x).then(function (response) {
         //     console.log(response.data);

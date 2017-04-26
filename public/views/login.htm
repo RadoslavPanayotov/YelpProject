@@ -1,11 +1,13 @@
- <form name="myForm" ng-submit="logMe()">
-    <label for="username">Username</label>
-    <input id="username" ng-model="user.username" name="username" type="text" /> <br/> <br/>
-    <label for="password">Password</label>
-    <input id="password" ng-model="user.password" name="password" type="password" /> <br/> <br/>
-    <button id="logBut" type="submit">LOGIN</button>
-    <button id="regBut" type="submit">REGISTER</button>
-    <div>
-        <p>{{errorMessage}}</p>
-    </div>
-</form>
+ <div id="loginFormDiv">
+    <form name="myForm" ng-submit="logMe()">
+        <label for="username">Username</label>
+        <input id="username" ng-model="user.username" name="username" type="text" /> <br/> <br/>
+        <label for="password">Password</label>
+        <input id="password" ng-model="user.password" name="password" type="password" /> <br/> <br/>
+        <button id="logBut" type="submit">LOGIN</button>
+        <button id="regBut" type="submit">REGISTER</button>
+        <div>
+            <p>{{errorMessage}}</p>
+        </div>
+    </form>
+ <div id="loginFormDiv">

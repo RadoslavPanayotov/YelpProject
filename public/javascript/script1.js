@@ -1,6 +1,7 @@
 var app = angular.module('myApp', ['ngRoute']);
 app.run(function($rootScope){
     $rootScope.isLogged = true;
+
 });
 app.config(function($routeProvider) {
     $routeProvider.when('/login', {
