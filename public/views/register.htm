@@ -1,12 +1,19 @@
- <form  name="regForm" ng-submit="regMe()">
-    <label for="username">Username</label>
-    <input id="username" ng-model="user.username" name="username" type="text" /> <br/> <br/>
-    <label for="password">Password</label>
-    <input id="password" ng-model="user.password" name="password" type="password" /> <br/> <br/>
-    <label for="email">Email</label>
-    <input id="email" ng-model="user.email" name="password" type="email" /> <br/> <br/>
-    <p>Business<p>
-     <input id="typeUser" ng-click="doIfClicked()" name="radioBusiness" type="checkbox" value="Yes"/> <br/> <br/>
-     
-    <button  id="createAccount" type="submit">Create account</button>
-</form>
+ <div id="registerFormDiv">
+    <form  name="regForm" ng-submit="regMe()">
+        <label for="username">Username</label>
+        <input id="username" ng-model="user.username" name="username" type="text" /> <br/> <br/>
+        <p>{{errorUserMessage}}</p>
+        <label for="password">Password</label>
+        <input id="password" ng-model="user.password" name="password" type="password" /> <br/> <br/>
+        <p>{{errorPassMessage}}</p>
+        <label for="email">Email</label>
+        <input id="email" ng-model="user.email" name="password" type="email" /> <br/> <br/>
+        <p>Business<p>
+        <input id="typeUser" ng-click="doIfClicked()" name="radioBusiness" type="checkbox" value="Yes"/> <br/> <br/>
+        
+        <button  id="createAccount" type="submit">Create account</button>
+    </form>
+    <div>
+        <p>{{errorMessage}}</p>
+    </div>
+ </div>
