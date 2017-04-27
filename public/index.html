@@ -4,23 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./stylesheets/style.css" rel="stylesheet" />
+    <link href="./stylesheets/reset.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./javascript/bootstrap/dist/css/bootstrap.min.css">
     <script src="./javascript/angular/angular.min.js"></script>
     <script src="./javascript/angular-route/angular-route.js"></script>
     <script src="./javascript/angular-route/angular-route.min.js"></script>
+    <!--<script src="./javascript/bootstrap/dist/js/bootstrap.min.js"></script>-->
 </head>
 
 <body ng-app="myApp">
     <div>
-    <div ng-show="isLogged">
-        <a href="#login">Login</a>
-        <a href="#register">Register</a>
+        <header ng-controller="homePage">
+            <nav>
+                <div class="navbar-header">
+                    <p class="lead">WebSiteName</p>  
+                </div>
+                <div class="container-fluid">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li ng-click="showDiv()" ng-show="hideBtn">
+                            <a href="#login">Login</a>
+                        </li>
+                        <li ng-click="showDiv()" ng-hide="hideBtn">
+                            <a href="#register">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div ng-show="isLogged">
 
-        <div ng-view></div>
-    </div>
-    <script src="./javascript/script1.js"></script>
-    <script src="./javascript/services/userService.js"></script>
-    <script src="./javascript/controllers/loginController.js"></script>
-    <script src="./javascript/controllers/registerController.js"></script>
+            <!--<a href="#login">Login</a>
+            <a href="#register">Register</a>-->
+
+            <div ng-view></div>
+        </div>
+        <script src="./javascript/script1.js"></script>
+        <script src="./javascript/services/userService.js"></script>
+        <script src="./javascript/controllers/loginController.js"></script>
+        <script src="./javascript/controllers/homeController.js"></script>
+        <script src="./javascript/controllers/registerController.js"></script>
 
 </body>
 

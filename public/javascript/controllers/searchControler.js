@@ -1,5 +1,5 @@
-app.controller('searchControler', function ($scope) {
-$scope.search= function (){
-    
-}
+app.controller('searchControler', function($scope) {
+    $scope.search = function() {
+
+    }
 })
