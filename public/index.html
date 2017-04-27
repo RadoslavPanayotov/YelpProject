@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-     
+
     <link href="./stylesheets/reset.css" rel="stylesheet" />
     <link href="./stylesheets/style.css" rel="stylesheet" />
-  
+
     <link rel="stylesheet" href="./javascript/bootstrap/dist/css/bootstrap.min.css" />
     <script src="./javascript/angular/angular.min.js"></script>
     <script src="./javascript/angular-route/angular-route.js"></script>
     <script src="./javascript/angular-route/angular-route.min.js"></script>
+    <script src="./javascript/angular-cookies/angular-cookies.js"></script>
     <!--<script src="./javascript/bootstrap/dist/js/bootstrap.min.js"></script>-->
 </head>
 
@@ -27,8 +28,15 @@
             <div ng-view></div>
         </div>
     </div>
+    <!--App module -->
+
     <script src="./javascript/script1.js"></script>
+
+    <!--Services -->
     <script src="./javascript/services/userService.js"></script>
+    <script src="./javascript/services/isLoggedService.js"></script>
+
+    <!--Controllers -->
     <script src="./javascript/controllers/searchControler.js"></script>
     <script src="./javascript/controllers/homecontroller.js"></script>
     <script src="./javascript/controllers/loginController.js"></script>

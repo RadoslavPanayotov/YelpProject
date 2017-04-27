@@ -1,5 +1,7 @@
-app.controller('register', function($scope, $rootScope, userService) {
+app.controller('register', function($scope, $rootScope, userService, $window, isLoggedService) {
     // If scope.user.type = false means normal user, else business user
+
+    isLoggedService.listCookies();
     $scope.user = {};
     $scope.user.type = false;
     $scope.doIfClicked = function() {
@@ -27,6 +29,7 @@ app.controller('register', function($scope, $rootScope, userService) {
             console.log(data);
             if (data.data.value == "true") {
                 $rootScope.isLogged = false;
+                $window.localStorage.setItem("userId", data.data.user);
             } else {
                 $scope.errorMessage = "There is a user with such a username or an email!"
             }
