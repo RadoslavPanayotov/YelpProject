@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 app.controller('login', function($scope, userService, $rootScope) {
     $scope.errorMessage = '';
 
@@ -13,6 +14,15 @@ app.controller('login', function($scope, userService, $rootScope) {
         userService.postReq('http://localhost:3000/users', 'POST', JSON.stringify($scope.user)).then(function(data) {
             console.log(data);
             if (data.data.value == "true") {
+=======
+app.controller('login', function ($scope, userService, $rootScope) {
+   $scope.errorMessage = '';
+   
+    $scope.logMe = function () {
+        userService.postReq('http://localhost:3000/users','POST',JSON.stringify($scope.user)).then(function (data){    
+            console.log(data);
+            if(data.data.value == "true"){ 
+>>>>>>> 7a84955b5103b3f1ca1c743ebe0457c61e384f60
                 $rootScope.isLogged = false;
             } else {
                 $scope.errorMessage = "Username or password are invalid!"
