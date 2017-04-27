@@ -1,4 +1,4 @@
-app.controller('searchControler', function($scope) {
+app.controller('home', function($scope) {
     $scope.search = function() {
 
     }

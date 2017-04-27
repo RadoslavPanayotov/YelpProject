@@ -1,9 +1,21 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("../images/yelpMain.jpg");
 }
 
 a {
   color: #00B7FF;
 };
-
+#formSearch{
+  padding-left: 50em;
+}
+#divMain{
+  background-color: blue;
+  text-align: center;
+  margin: 10em auto;
+  padding: 1em;
+}
+#searchField{
+  width: 20em;
+}
