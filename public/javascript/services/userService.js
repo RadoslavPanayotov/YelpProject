@@ -3,7 +3,7 @@ app.service("userService", function($http, $rootScope) {
         this.req = $http({
             url: url,
             method: method,
-            data: data,
+            data: data || null,
             withCredentials: true
         });
         return this.req;

@@ -1,6 +1,8 @@
-var app = angular.module('myApp', ['ngRoute','ngCookies'])
+var app = angular.module('myApp', ['ngRoute', 'ngCookies'])
 app.run(function ($rootScope) {
-  $rootScope.isLogged = true
+  $rootScope.isLogged = true;
+  $rootScope.isLogout = false;
+  $rootScope.isSignUp = true;
 })
 app.config(function ($routeProvider) {
   $routeProvider.when('/login', {

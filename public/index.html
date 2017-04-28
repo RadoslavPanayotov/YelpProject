@@ -19,14 +19,32 @@
 
 <body ng-app="myApp">
     <div>
+        <header>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">WebSiteName</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">Page 1</a></li>
+                        <li><a href="#">Page 2</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#register" ng-click="showDiv()" ng-show="isSignUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="#login" ng-show="isLogged"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        <li ng-controller="logout" ng-click="logOut()" ng-show="isLogout"><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
 
-        <div ng-show="isLogged">
 
-            <!--<a href="#login">Login</a>
+        <!--<a href="#login">Login</a>
             <a href="#register">Register</a>-->
-            <a ng-click="showDiv()" ng-hide="hideBtn" href="#home">Home</a>
-            <div ng-view></div>
-        </div>
+
+        <div ng-view></div>
+
     </div>
     <!--App module -->
 
@@ -38,9 +56,10 @@
 
     <!--Controllers -->
     <script src="./javascript/controllers/searchControler.js"></script>
-    <script src="./javascript/controllers/homecontroller.js"></script>
+
     <script src="./javascript/controllers/loginController.js"></script>
-    <script src="./javascript/controllers/homeController.js"></script>
+    <script src="./javascript/controllers/logoutController.js"></script>
+
     <script src="./javascript/controllers/registerController.js"></script>
 
 </body>

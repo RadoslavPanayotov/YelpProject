@@ -1,22 +1,26 @@
 <div id="loginFormDiv">
     <form name="myForm" ng-submit="logMe()" class="form-horizontal">
-        <div class="form-group">
+        <div class="form-group row">
             <label class="control-label col-sm-2" for="username">Username</label>
-            <div class="col-sm-10">
-                <input id="username" ng-model="user.username" name="username" type="text" /> <br/> <br/>
+            <div class="col-sm-4">
+                <input id="username" ng-model="user.username" name="username" type="text" class="form-control" /> <br/> <br/>
             </div>
         </div>
-        <div class="form-group">
-            <label  class="control-label col-sm-2" for="password">Password</label>
-            <div class="col-sm-10">
-                <input id="password" ng-model="user.password" name="password" type="password" />
 
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="password">Password</label>
+            <div class="col-sm-4">
+                <input id="password" ng-model="user.password" name="password" type="password" class="form-control" />
             </div>
+
         </div>
-        <button id="logBut" type="submit">LOGIN</button>
-        <button id="regBut" type="submit">REGISTER</button>
-        <div>
-            <p>{{errorMessage}}</p>
+        <div class="form-group row">
+            <div class="col-sm-1    col-sm-offset-3 ">
+                <button id="logBut" class="btn btn-primary" type="submit">LOGIN</button>
+            </div>
+            <div>
+                <p>{{errorMessage}}</p>
+            </div>
         </div>
     </form>
 </div>
