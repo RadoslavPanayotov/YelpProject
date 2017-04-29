@@ -19,6 +19,10 @@ app.config(function ($routeProvider) {
     })
 })
 
-app.config(['$locationProvider', function($locationProvider) {
+app.config(['$locationProvider', function ($locationProvider) {
   $locationProvider.hashPrefix('');
+}]);
+
+app.config(['$qProvider', function ($qProvider) {
+  $qProvider.errorOnUnhandledRejections(false);
 }]);
