@@ -23,6 +23,10 @@ a {
   border: 1px solid blue;
   border-radius: 10px;
   margin-top: 1.3em;
-  
-  
+}
+
+.angular-google-map-container {
+  margin:auto;
+  width: 500px;
+  height: 400px; 
 }

@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ngRoute', 'ngCookies'])
+var app = angular.module('myApp', ['ngRoute', 'uiGmapgoogle-maps'])
 app.run(function ($rootScope) {
   $rootScope.isLogged = true;
   $rootScope.isLogout = false;
@@ -13,19 +13,8 @@ app.config(function ($routeProvider) {
       templateUrl: '../views/register.htm',
       controller: 'register'
     })
-    .when('/home', {
-      templateUrl: '../views/home.htm',
-      controller: 'home'
+    .when('/map', {
+      templateUrl: '../views/map.htm',
+      controller: 'map'
     })
 })
-
-// function request(url, method, data){
-
-//     $http({
-//             url: url,
-//             method: method,
-//             data: data,
-//             withCredentials: true,
-
-//         })
-// }///////QUESTION FOR THE BOSS/////////////////

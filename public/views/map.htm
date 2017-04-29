@@ -1,0 +1,8 @@
+<div id="divMain">
+    <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+    <form id="formSearch" name="searchForm" ng-submit="search()">
+        <label for="searchField">Search</label>
+        <input id="searchField" ng-model="data.search" name="mainSearch" type="text" />
+        <button id="searchBut" type="submit">Search</button>
+    </form>
+</div>
