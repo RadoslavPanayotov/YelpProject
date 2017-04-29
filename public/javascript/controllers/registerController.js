@@ -1,7 +1,6 @@
 app.controller('register', function($scope, $rootScope, userService, $window, isLoggedService) {
     // If scope.user.type = false means normal user, else business user
 
-     isLoggedService.auth();
     $scope.user = {};
     $scope.user.type = false;
     $scope.doIfClicked = function() {

@@ -18,3 +18,7 @@ app.config(function ($routeProvider) {
       controller: 'map'
     })
 })
+
+app.config(['$locationProvider', function($locationProvider) {
+  $locationProvider.hashPrefix('');
+}]);

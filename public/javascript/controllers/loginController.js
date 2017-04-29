@@ -7,7 +7,7 @@ app.controller('login', function ($scope, isLoggedService, userService, $rootSco
   // var c = getCookie("connect.sid")
   
   $scope.errorMessage = ''
-  isLoggedService.auth();
+
   $scope.logMe = function () {
     userService.postReq('http://localhost:3000/users', 'POST', JSON.stringify($scope.user)).then(function (data) {
       console.log(data)
