@@ -17,6 +17,10 @@ app.config(function ($routeProvider) {
       templateUrl: '../views/map.htm',
       controller: 'map'
     })
+    .when('/req', {
+      templateUrl: '../views/req.htm',
+      controller: 'bus'
+    })
 })
 
 app.config(['$locationProvider', function ($locationProvider) {
