@@ -1,1 +1,12 @@
 <h1>lele</h1>
+<form class="md-form form-sm" ng-submit="searchMe()">
+    <label class="radio-inline">
+        <input type="radio" name="optradio">Restaurants</label>
+    <label class="radio-inline">
+        <input ng-model="restaurantModel" type="radio" name="optradio">Shopping</label>
+    <label class="radio-inline">
+        <input ng-model="shoppingModel" type="radio" name="optradio">Entertainment</label>
+    <input  ng-model="entertainmentModel" type="text" name="searchBar" id="searchBar" ng-model="searchResult" class="form-control" />
+    <label for="searchBar" class="">Example label</label>
+    <button type="submit" class="btn btn-deep-purple">Search</button>
+</form>
