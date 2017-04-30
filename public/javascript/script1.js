@@ -26,3 +26,11 @@ app.config(['$locationProvider', function ($locationProvider) {
 app.config(['$qProvider', function ($qProvider) {
   $qProvider.errorOnUnhandledRejections(false);
 }]);
+
+// app.config(function (uiGmapGoogleMapApiProvider) {
+//     uiGmapGoogleMapApiProvider.configure({
+//         key: '',
+//         v: '3',
+//         libraries: 'weather,geometry,visualization'
+//     });
+// });
