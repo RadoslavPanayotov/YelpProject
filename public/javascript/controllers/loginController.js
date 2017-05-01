@@ -9,7 +9,7 @@ app.controller('login', function ($scope, isLoggedService, userService, $rootSco
   $scope.errorMessage = ''
 
   $scope.logMe = function () {
-    userService.postReq('http://localhost:3000/users', 'POST', JSON.stringify($scope.user)).then(function (data) {
+    userService.postReq('http://localhost:3000/login', 'POST', JSON.stringify($scope.user)).then(function (data) {
       console.log(data)
       if (data.data.value == 'true') {
         $window.sessionStorage.setItem('userId', data.data.user)

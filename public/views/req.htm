@@ -1,12 +1,14 @@
 <h1>lele</h1>
 <form class="md-form form-sm" ng-submit="searchMe()">
     <label class="radio-inline">
-        <input type="radio" name="optradio">Restaurants</label>
+        <input type="checkbox" name="checkBoxRest"    ng-click="clickForCheck()" ng-model="checkRestaurant"  />Restaurants</label>
+    <label class="radio-inline" >
+        <input type="checkbox"  ng-model="checkShop"  ng-click="clickForCheck()" name="checkBoxShop"/>Shopping</label>
     <label class="radio-inline">
-        <input ng-model="restaurantModel" type="radio" name="optradio">Shopping</label>
-    <label class="radio-inline">
-        <input ng-model="shoppingModel" type="radio" name="optradio">Entertainment</label>
-    <input  ng-model="entertainmentModel" type="text" name="searchBar" id="searchBar" ng-model="searchResult" class="form-control" />
+        <input  type="checkbox" name="checkBoxEnter" ng-model="checkEntertainment" ng-click="clickForCheck()"/>Entertainment</label>
+
+    <input type="text" name="searchBar" id="searchBar" ng-model="searchResult" class="form-control" />
     <label for="searchBar" class="">Example label</label>
     <button type="submit" class="btn btn-deep-purple">Search</button>
+    <button type="button" class="btn btn-deep-purple" ng-click="clickMe()">Search</button>
 </form>

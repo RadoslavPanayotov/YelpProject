@@ -1,8 +1,8 @@
 var app = angular.module('myApp', ['ngRoute', 'uiGmapgoogle-maps'])
 app.run(function ($rootScope) {
-  $rootScope.isLogged = true;
-  $rootScope.isLogout = false;
-  $rootScope.isSignUp = true;
+  $rootScope.isLogged = true
+  $rootScope.isLogout = false
+  $rootScope.isSignUp = true
 })
 app.config(function ($routeProvider) {
   $routeProvider.when('/login', {
@@ -21,20 +21,24 @@ app.config(function ($routeProvider) {
       templateUrl: '../views/req.htm',
       controller: 'bus'
     })
+    .when('/user', {
+      templateUrl: '../views/user.htm',
+      controller: 'usercontroller'
+    })
 })
 
 app.config(['$locationProvider', function ($locationProvider) {
-  $locationProvider.hashPrefix('');
-}]);
+  $locationProvider.hashPrefix('')
+}])
 
 app.config(['$qProvider', function ($qProvider) {
-  $qProvider.errorOnUnhandledRejections(false);
-}]);
+  $qProvider.errorOnUnhandledRejections(false)
+}])
 
 // app.config(function (uiGmapGoogleMapApiProvider) {
 //     uiGmapGoogleMapApiProvider.configure({
 //         key: '',
 //         v: '3',
 //         libraries: 'weather,geometry,visualization'
-//     });
-// });
+//     })
+// })
