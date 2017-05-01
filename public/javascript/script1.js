@@ -1,4 +1,6 @@
-var app = angular.module('myApp', ['ngRoute', 'uiGmapgoogle-maps'])
+var app = angular.module('myApp', ['ngRoute', 
+'uiGmapgoogle-maps',
+]);
 app.run(function ($rootScope) {
   $rootScope.isLogged = true;
   $rootScope.isLogout = false;
@@ -30,11 +32,3 @@ app.config(['$locationProvider', function ($locationProvider) {
 app.config(['$qProvider', function ($qProvider) {
   $qProvider.errorOnUnhandledRejections(false);
 }]);
-
-// app.config(function (uiGmapGoogleMapApiProvider) {
-//     uiGmapGoogleMapApiProvider.configure({
-//         key: '',
-//         v: '3',
-//         libraries: 'weather,geometry,visualization'
-//     });
-// });
