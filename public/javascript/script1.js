@@ -2,9 +2,9 @@ var app = angular.module('myApp', ['ngRoute',
 'uiGmapgoogle-maps', 'ngAnimate'
 ]);
 app.run(function ($rootScope) {
-  $rootScope.isLogged = true
-  $rootScope.isLogout = false
-  $rootScope.isSignUp = true
+  $rootScope.showLogin = true;
+  $rootScope.showSignUp = true;
+  $rootScope.showLogout = false;
 })
 app.config(function ($routeProvider) {
   $routeProvider.when('/login', {
@@ -22,6 +22,10 @@ app.config(function ($routeProvider) {
     .when('/req', {
       templateUrl: '../views/req.htm',
       controller: 'bus'
+    })
+     .when('/reviews', {
+      templateUrl: '../views/reviews.htm',
+      controller: 'reviewsController'
     })
 })
 

@@ -1,19 +1,34 @@
-app.controller('map', function ($scope, userService, $rootscoope) {
+app.controller('map', function ($scope, userService, $rootScope,$window,$location) {
+  var logedUser = $window.sessionStorage.getItem('userId')
+
+  if (logedUser != undefined) {
+    $rootScope.showLogin = false
+    $rootScope.showSignUp = false
+    $rootScope.showLogout = true
+  }
   $scope.businesses = []
   $scope.showResults = true
   $scope.reviewShow = false
-  $scope.reviewWrite = function () {
-    $rootscoope.clickedItem = 
-    $scope.reviewShow = true
+  $scope.reviewWrite = function (index) {
+    $rootScope.clickedItem = $scope.businesses[index]
+
+    console.log($rootScope.clickedItem)
+    if (logedUser != undefined) {
+      $rootScope.clickedItem = $scope.businesses[index];
+      console.log($rootScope.clickedItem);
+      $location.path('/reviews');
+    }else {
+      alert('You have to be logged in!')
+    }
   }
 
-  $scope.addItem = function() {
-    $scope.items.push($scope.item);
-    $scope.item = {};
-  };
-  $scope.removeItem = function(index) {
-    $scope.items.splice(index, 1);
-  };
+  $scope.addItem = function () {
+    $scope.items.push($scope.item)
+    $scope.item = {}
+  }
+  $scope.removeItem = function (index) {
+    $scope.items.splice(index, 1)
+  }
   // function to find the users lat and lng coordinates
   getLocation()
   function getLocation () {
@@ -88,7 +103,8 @@ app.controller('map', function ($scope, userService, $rootscoope) {
       id: index,
       description: obj.description,
       tittle: obj.name,
-      
+      image: obj.image,
+      rate: obj.rate || null
     }
     console.log('vikam te')
     mark.content = '<div class="infoWindowContent">' + obj.description + '</div>'
@@ -149,12 +165,14 @@ app.controller('map', function ($scope, userService, $rootscoope) {
     // Reset markers on map
     $scope.mapMarkers = markers
 
-    $scope.businesses = data.data
+
+    for (var index = 0; index <= data.data.length - 1; index++) {
+      $scope.businesses.push(data.data[index])
+      $scope.businesses[index].id = index
+    }
     $scope.removeItem = function (index) {
       $scope.businesses.splice(index, 1)
     }
     $scope.showResults = true
   }
-
-  
 })

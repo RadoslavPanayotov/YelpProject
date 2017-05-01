@@ -18,39 +18,47 @@
     <script type=text/javascript src="./javascript/angular-google-maps/dist/angular-google-maps.min.js"></script>
     <script type=text/javascript src="./javascript/angular-animate/angular-animate.js"></script>
     <script type=text/javascript src="./javascript/angular-animate/angular-animate.min.js"></script>
+    <script type=text/javascript src="./javascript/angular-animate/angular-animate.js"></script>
+    <script type=text/javascript src="./javascript/angular-animate/angular-animate.min.js"></script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            window.location.hash = "#map";
+        });
+    </script>
 
 </head>
 
 <body ng-app="myApp">
-    <div>
 
-        <!-- Header section -->
-        <header>
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <!-- Website name -->
-                        <a class="navbar-brand" href="#">ProjectX</a>
-                    </div>
-                    <ul class="nav navbar-nav">
-                        <!-- Nav bar locations -->
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Page 1</a></li>
-                        <li><a href="#">Page 2</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Sign up button-->
-                        <li><a href="#register" ng-click="showDiv()" ng-show="isSignUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                        <!-- Login button -->
-                        <li><a href="#/login" ng-show="isLogged"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                        <!-- Logout button -->
-                        <li ng-controller="logout" ng-click="logOut()" ng-show="isLogout"><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-                    </ul>
+
+    <!-- Header section -->
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <!-- Website name -->
+                    <a class="navbar-brand" href="#">ProjectX</a>
                 </div>
-            </nav>
-        </header>
-        <!--Views Generator-->
-        <div ng-view></div>
+                <ul class="nav navbar-nav">
+                    <!-- Nav bar locations -->
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Page 1</a></li>
+                    <li><a href="#">Page 2</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Sign up button-->
+                    <li><a href="#register" ng-click="showDiv()" ng-show="showSignUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <!-- Login button -->
+                    <li><a href="#/login" ng-show="showLogin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <!-- Logout button -->
+                    <li><a ng-controller="logout" ng-click="logOut()" ng-show="showLogout"><span class="glyphicon glyphicon-log-out">Logout</span></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!--Views Generator-->
+    <div ng-view></div>
+
     </div>
     <!--App module -->
 
@@ -59,14 +67,15 @@
     <!--Services -->
     <script type=text/javascript src="./javascript/services/userService.js"></script>
     <script type=text/javascript src="./javascript/services/isLoggedService.js"></script>
+    <script type=text/javascript src="./javascript/services/authentication.js"></script>
 
     <!--Controllers -->
-
     <script type=text/javascript src="./javascript/controllers/loginController.js"></script>
     <script type=text/javascript src="./javascript/controllers/businessRequestController.js"></script>
     <script type=text/javascript src="./javascript/controllers/logoutController.js"></script>
     <script type=text/javascript src="./javascript/controllers/registerController.js"></script>
     <script type=text/javascript src="./javascript/controllers/mapControler.js"></script>
+    <script type=text/javascript src="./javascript/controllers/reviewController.js"></script>
 
     <!--Google Api -->
     <script type=text/javascript src='//maps.googleapis.com/maps/api/js?key=AIzaSyBrIeIp7tgUybztxF_4A4HsN0PS8D3H_VU'></script>

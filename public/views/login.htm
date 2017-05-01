@@ -1,26 +1,17 @@
-<div id="loginFormDiv">
-    <form name="myForm" ng-submit="logMe()" class="form-horizontal">
-        <div class="form-group row">
-            <label class="control-label col-sm-2" for="username">Username</label>
-            <div class="col-sm-4">
-                <input id="username" ng-model="user.username" name="username" type="text" class="form-control" /> <br/> <br/>
-            </div>
-        </div>
 
-        <div class="form-group">
-            <label class="control-label col-sm-2" for="password">Password</label>
-            <div class="col-sm-4">
-                <input id="password" ng-model="user.password" name="password" type="password" class="form-control" />
-            </div>
+<div class="container">
+    <div class="wrapper">
+        <form name="Login_Form" ng-submit="logMe()" class="form-signin">
+            <h3 class="form-signin-heading">Welcome Back! Please Sign In</h3>
+            <hr class="colorgraph"><br>
 
-        </div>
-        <div class="form-group row">
-            <div class="col-sm-1    col-sm-offset-3 ">
-                <button id="logBut" class="btn btn-primary" type="submit">LOGIN</button>
-            </div>
+            <input type="text" class="form-control" placeholder="Username" required="" autofocus="" ng-model="user.username" name="username" />
+            <input type="password" class="form-control" name="Password" placeholder="Password" required="" ng-model="user.password" />
+
+            <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="submit">Login</button>
             <div>
                 <p>{{errorMessage}}</p>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>

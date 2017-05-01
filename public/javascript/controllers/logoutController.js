@@ -1,22 +1,17 @@
-app.controller('logout', function ($scope, isLoggedService, userService, $rootScope, $location, $window) {
-    
-  //$scope.errorMessage = ''
-  //isLoggedService.auth()
+app.controller('logout', function ($scope, userService, $rootScope, $location, $window, authentication) {
   $scope.logOut = function () {
-    userService.postReq('http://localhost:3000/logout', 'GET', ).then(function (data) {  
-        console.log("in");
-      if (data.data.value == 'true') {
-          console.log(data.data.value);
+    authentication.authMe().then(function (data) {
+      userService.postReq('http://localhost:3000/logout', 'GET', ).then(function (data) {
+        console.log("loged out");
         $window.sessionStorage.clear();
-        $rootScope.isLogout = false;
-        $rootScope.isLogged = true;
-        $location.path('/')
-      } else {
-          console.log("wrong");
-      }
-    }).catch(function (error, status) {
-      $scope.data.error = { message: error, status: status }
-      console.log($scope.data.error.status)
+        $rootScope.showLogin = true;
+        $rootScope.showSignUp = true;
+        $rootScope.showLogout = false;
+        $location.path('/map');
+      }).catch(function (error, status) {
+        $scope.data.error = { message: error, status: status }
+        console.log($scope.data.error.status)
+      });
     })
   }
-})
+});
