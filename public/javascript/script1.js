@@ -1,4 +1,6 @@
-var app = angular.module('myApp', ['ngRoute', 'uiGmapgoogle-maps'])
+var app = angular.module('myApp', ['ngRoute', 
+'uiGmapgoogle-maps',
+]);
 app.run(function ($rootScope) {
   $rootScope.isLogged = true
   $rootScope.isLogout = false
@@ -21,10 +23,6 @@ app.config(function ($routeProvider) {
       templateUrl: '../views/req.htm',
       controller: 'bus'
     })
-    .when('/user', {
-      templateUrl: '../views/user.htm',
-      controller: 'usercontroller'
-    })
 })
 
 app.config(['$locationProvider', function ($locationProvider) {
@@ -32,6 +30,7 @@ app.config(['$locationProvider', function ($locationProvider) {
 }])
 
 app.config(['$qProvider', function ($qProvider) {
+
   $qProvider.errorOnUnhandledRejections(false)
 }])
 
@@ -42,3 +41,6 @@ app.config(['$qProvider', function ($qProvider) {
 //         libraries: 'weather,geometry,visualization'
 //     })
 // })
+
+
+
