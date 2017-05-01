@@ -75,43 +75,54 @@ app.controller('map', function ($scope, userService) {
 
     //set initial markers on map
     $scope.mapMarkers = markers;
+
     // sends search request to backend from input, receives an array of objects, 
-    // empties markers array, sets user as initial marker and uses 
-    // createmarker to populate from result array.
     $scope.searchMe = function () {
-        var data = { value: $scope.searchResult };
+        var data = { value: $scope.searchResult }
+        if ($scope.checkRestaurant && (!$scope.checkShop) && (!$scope.checkEntertainment)) {
+            userService.postReq('http://localhost:3000/businesses/restaurants', 'POST', data).then(fillMapWithNewMarkers);
+        }
+        if ((!$scope.checkRestaurant) && $scope.checkShop && (!$scope.checkEntertainment)) {
+            userService.postReq('http://localhost:3000/businesses/shopping', 'POST', data).then(fillMapWithNewMarkers);
+        }
+        if ($scope.checkEntertainment && (!$scope.checkShop) && (!$scope.checkRestaurant)) {
+            userService.postReq('http://localhost:3000/businesses/entertainment', 'POST', data).then(fillMapWithNewMarkers);
+        }
+        if ($scope.checkEntertainment && $scope.checkShop && (!$scope.checkRestaurant)) {
+            userService.postReq('http://localhost:3000/businesses/shop&enter', 'POST', data).then(fillMapWithNewMarkers);
+        }
+        if ($scope.checkEntertainment && (!$scope.checkShop) && $scope.checkRestaurant) {
+            userService.postReq('http://localhost:3000/businesses/rest&enter', 'POST', data).then(fillMapWithNewMarkers);
+        }
+        if ((!$scope.checkEntertainment) && $scope.checkShop && $scope.checkRestaurant) {
+            userService.postReq('http://localhost:3000/businesses/rest&shop', 'POST', data).then(fillMapWithNewMarkers);
+        }
+        if (($scope.checkRestaurant && $scope.checkShop && $scope.checkEntertainment) || (!$scope.checkRestaurant && !$scope.checkShop && !$scope.checkEntertainment)) {
+            userService.postReq('http://localhost:3000/businesses', 'POST', data).then(fillMapWithNewMarkers);
+        }
+    }
+
+    // Empties markers array, sets user location as initial marker and uses 
+    // createmarker to populate from result array from a request
+    var fillMapWithNewMarkers = function (data) {
         console.log(data);
-        userService.postReq('http://localhost:3000/businesses', 'POST', data).then(function (data) {
-            console.log(data);
-            markers = [];
-            markers[0] = {
-                latitude: currentPosition.coords.latitude,
-                longitude: currentPosition.coords.longitude,
-                id: currentPosition.id,
-                icon: {
-                    url: '../../images/google-maps-hi.png',
-                    scaledSize: new google.maps.Size(25, 40),
-                },
-            };
+        markers = [];
+        markers[0] = {
+            latitude: currentPosition.coords.latitude,
+            longitude: currentPosition.coords.longitude,
+            id: currentPosition.id,
+            icon: {
+                url: '../../images/google-maps-hi.png',
+                scaledSize: new google.maps.Size(25, 40),
+            },
+        };
 
-            // var infoWindow = new google.maps.InfoWindow();
+        //Put all search result and user location on the map
+        for (var index = 0; index <= data.data.length - 1; index++) {
+            markers.push(createMarker(data.data[index], index));
+        }
 
-            //Put all search result and user location on the map
-            for (var index = 0; index <= data.data.length - 1; index++) {
-                markers.push(createMarker(data.data[index], index));
-                // google.maps.event.addListener(markers[index + 1], 'click', function () {
-                //     infoWindow.close();
-                //     infoWindow.setContent('<h2>' + markers[index + 1] + '</h2>' + markers[index + 1]);
-                //     infoWindow.open($scope.map, markers[index + 1]);
-                // })
-            }
-
-            $scope.mapMarkers = markers;
-
-            $scope.openInfoWindow = function (e, selectedMarker) {
-                e.preventDefault();
-                google.maps.event.trigger(selectedMarker, 'click');
-            }
-        });
+        //Reset markers on map
+        $scope.mapMarkers = markers;
     }
 });
