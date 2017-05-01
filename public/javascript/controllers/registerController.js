@@ -38,8 +38,10 @@ app.controller('register', function($scope, $rootScope, userService, $window, is
             $scope.data.error = { message: error, status: status };
             //console.log($scope.data.error.status);
         })
-
+        
 
     }
+
+
 
 })

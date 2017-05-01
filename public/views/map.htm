@@ -1,5 +1,5 @@
 <ui-gmap-google-map center='map.center' zoom='map.zoom' options="options">
-    <ui-gmap-markers id="map" models="mapMarkers" coords="'self'" icon="'icon'" fit="true" chunk="10" events="map.markersEvents">
+    <ui-gmap-markers id="id" models="mapMarkers" coords="'self'" icon="'icon'" fit="true" chunk="10" events="map.markersEvents">
         <a href="#" ng-click="openInfoWindow($event, markers[0])">{{markers[0].title}}</a>
     </ui-gmap-markers>
 </ui-gmap-google-map>
@@ -16,3 +16,58 @@
     <label for="searchBar" class="">Example label</label>
     <button type="submit" class="btn btn-deep-purple">Search</button>
 </form>
+<section ng-show="showResults" ng-repeat="business in businesses" ng-class>
+    <article>
+        <div class="container">
+            <div class="panel">
+                <!--/stories-->
+                <div class="row">
+                    <br>
+                    <div class="col-md-2 col-sm-3 text-center">
+                        <img alt="" ng-src="{{business.image}}"class="img-thumbnail">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <p>Rating: 0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-9">
+                                <a data="{{markers.id}}"ng-click="reviewWrite(markers.id)" >write a reviw</a>
+                            </div>
+                              <div class="col-xs-9">
+                                 <span ng-click="removeItem($index)">X</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-10 col-sm-9">
+                        <h3 class="text-primary">{{business.name}}</h3>
+                        <div class="row">
+                            <div class="col-xs-9">
+                                <h4><span class="label label-default">{{business.address}}</span></h4>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-xs-12">
+                                <p class="bg-info">
+                                    {{business.description}}
+                                </p>
+                                <!--<h4>
+                                    <small style="font-family:courier,'new courier';" class="text-muted">rating<a href="#" class="text-muted">Read More</a></small>
+                                </h4>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div>
+                            <textarea placeholder="Enter your review" id="review" cols="5" ng-show="reviewShow"></textarea>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <hr>
+        </div>
+        </div>
+    </article>
+</section>

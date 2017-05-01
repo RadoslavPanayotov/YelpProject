@@ -44,3 +44,35 @@ h2 {
     margin-bottom:0;
     margin-top: 0;
 }
+.text-center {
+  text-align: center;
+}
+li span {
+  float: right;
+  cursor: pointer;
+}
+
+#esImg{
+  width: 100px;
+  height: 100px;
+}
+/*.fade {
+  transition: 1s linear all;
+  -webkit-transition: 1s linear all;
+}
+
+.fade.ng-enter {
+  opacity: 0.5;
+}
+
+.fade.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.fade.ng-leave {
+  opacity: 1;
+}
+
+.fade.ng-leave.ng-leave-active {
+  opacity: 0.5;
+}*/
