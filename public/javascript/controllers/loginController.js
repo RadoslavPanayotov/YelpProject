@@ -13,6 +13,7 @@ app.controller('login', function ($scope, isLoggedService, userService, $rootSco
       console.log(data)
       if (data.data.value == 'true') {
         $window.sessionStorage.setItem('userId', data.data.user)
+        
         $rootScope.isLogout = true; 
         $rootScope.isSignUp = false;
         $location.path('/');
