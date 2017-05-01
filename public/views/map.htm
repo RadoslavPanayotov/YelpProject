@@ -1,5 +1,5 @@
 <ui-gmap-google-map center='map.center' zoom='map.zoom' options="options">
-    <ui-gmap-markers id="id" models="mapMarkers" coords="'self'" icon="'icon'" fit="true" chunk="10" events="map.markersEvents">
+    <ui-gmap-markers id="id" models="mapMarkers" coords="'self'" icon="'icon'" type="'cluster'" fit="true" chunk="10" events="map.markersEvents">
         <a href="#" ng-click="openInfoWindow($event, markers[0])">{{markers[0].title}}</a>
     </ui-gmap-markers>
 </ui-gmap-google-map>
@@ -32,7 +32,7 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-9">
-                                <a data="{{business.id}}"ng-click="reviewWrite(business.id)" >write a reviw</a>
+                                <a data="{{business.id}}"ng-click="reviewWrite(business.id)" >write a review</a>
                             </div>
                               <div class="col-xs-9">
                                  <span ng-click="removeItem($index)">X</span>

@@ -1,4 +1,4 @@
-app.controller('map', function ($scope, userService, $rootScope,$window,$location) {
+app.controller('map', function ($scope, userService, $rootScope, $window, $location) {
   var logedUser = $window.sessionStorage.getItem('userId')
 
   if (logedUser != undefined) {
@@ -17,7 +17,7 @@ app.controller('map', function ($scope, userService, $rootScope,$window,$locatio
       $rootScope.clickedItem = $scope.businesses[index];
       console.log($rootScope.clickedItem);
       $location.path('/reviews');
-    }else {
+    } else {
       alert('You have to be logged in!')
     }
   }
@@ -31,7 +31,7 @@ app.controller('map', function ($scope, userService, $rootScope,$window,$locatio
   }
   // function to find the users lat and lng coordinates
   getLocation()
-  function getLocation () {
+  function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition, function (error) {
         console.log('Failed to get current position ' + error)
@@ -51,7 +51,7 @@ app.controller('map', function ($scope, userService, $rootScope,$window,$locatio
   }
   // Callback for getCurrent position, stores user location in currentPosition, 
   // sets map center on user location, gives user marker a custom icon and user's lat and lng.
-  function showPosition (position) {
+  function showPosition(position) {
     currentPosition.coords.latitude = position.coords.latitude
     currentPosition.coords.longitude = position.coords.longitude
     $scope.map = { center: { latitude: position.coords.latitude, longitude: position.coords.longitude }, zoom: 10 }
@@ -93,7 +93,8 @@ app.controller('map', function ($scope, userService, $rootScope,$window,$locatio
     icon: {
       url: '../../images/google-maps-hi.png',
       scaledSize: new google.maps.Size(25, 40)
-  }}]
+    }
+  }]
 
   // function to create markers.
   var createMarker = function (obj, index) {
