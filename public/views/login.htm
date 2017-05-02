@@ -2,14 +2,14 @@
 <div class="container">
     <div class="wrapper">
         <form name="Login_Form" ng-submit="logMe()" class="form-signin">
-            <h3 class="form-signin-heading">Welcome Back! Please Sign In</h3>
+            <h3 id="welcomLog" class="form-signin-heading">Welcome!</h3>
             <hr class="colorgraph"><br>
 
             <input type="text" class="form-control" placeholder="Username" required="" autofocus="" ng-model="user.username" name="username" />
             <input type="password" class="form-control" name="Password" placeholder="Password" required="" ng-model="user.password" />
 
             <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="submit">Login</button>
-            <div>
+            <div id="errorMessage">
                 <p>{{errorMessage}}</p>
             </div>
         </form>
