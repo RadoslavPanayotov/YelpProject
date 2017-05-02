@@ -30,10 +30,10 @@ app.config(function ($routeProvider) {
 })
 
 app.config(['$locationProvider', function ($locationProvider) {
-  $locationProvider.hashPrefix('')
+  $locationProvider.hashPrefix('');
 }])
 
 app.config(['$qProvider', function ($qProvider) {
 
-  $qProvider.errorOnUnhandledRejections(false)
+  $qProvider.errorOnUnhandledRejections(false);
 }])

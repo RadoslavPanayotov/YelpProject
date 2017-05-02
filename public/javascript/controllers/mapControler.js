@@ -2,16 +2,16 @@ app.controller('map', function($scope, userService, $rootScope, $window, $locati
     var logedUser = $window.sessionStorage.getItem('userId')
 
     if (logedUser != undefined) {
-        $rootScope.showLogin = false
-        $rootScope.showSignUp = false
-        $rootScope.showLogout = true
+        $rootScope.showLogin = false;
+        $rootScope.showSignUp = false;
+        $rootScope.showLogout = true;
     }
 
     $scope.businesses = []
-    $scope.showResults = true
-    $scope.reviewShow = false
+    $scope.showResults = true;
+    $scope.reviewShow = false;
     $scope.reviewWrite = function(index) {
-        $rootScope.clickedItem = $scope.businesses[index]
+        $rootScope.clickedItem = $scope.businesses[index];
 
 
         if (logedUser != undefined) {
@@ -19,16 +19,16 @@ app.controller('map', function($scope, userService, $rootScope, $window, $locati
 
             $location.path('/reviews');
         } else {
-            alert('You have to be logged in!')
+            alert('You have to be logged in!');
         }
     }
 
     $scope.addItem = function() {
-        $scope.items.push($scope.item)
-        $scope.item = {}
+        $scope.items.push($scope.item);
+        $scope.item = {};
     }
     $scope.removeItem = function(index) {
-            $scope.items.splice(index, 1)
+            $scope.items.splice(index, 1);
         }
         // function to find the users lat and lng coordinates
     getLocation();
@@ -124,25 +124,25 @@ app.controller('map', function($scope, userService, $rootScope, $window, $locati
     $scope.searchMe = function() {
         var data = { value: $scope.searchResult }
         if ($scope.checkRestaurant && (!$scope.checkShop) && (!$scope.checkEntertainment)) {
-            userService.postReq('https://projectxnr.herokuapp.com/businesses/restaurants', 'POST', data).then(fillMapWithNewMarkers)
+            userService.postReq('https://projectxnr.herokuapp.com/businesses/restaurants', 'POST', data).then(fillMapWithNewMarkers);
         }
         if ((!$scope.checkRestaurant) && $scope.checkShop && (!$scope.checkEntertainment)) {
-            userService.postReq('https://projectxnr.herokuapp.com/businesses/shopping', 'POST', data).then(fillMapWithNewMarkers)
+            userService.postReq('https://projectxnr.herokuapp.com/businesses/shopping', 'POST', data).then(fillMapWithNewMarkers);
         }
         if ($scope.checkEntertainment && (!$scope.checkShop) && (!$scope.checkRestaurant)) {
-            userService.postReq('hhttps://projectxnr.herokuapp.com/businesses/entertainment', 'POST', data).then(fillMapWithNewMarkers)
+            userService.postReq('hhttps://projectxnr.herokuapp.com/businesses/entertainment', 'POST', data).then(fillMapWithNewMarkers);
         }
         if ($scope.checkEntertainment && $scope.checkShop && (!$scope.checkRestaurant)) {
-            userService.postReq('https://projectxnr.herokuapp.com/businesses/shop&enter', 'POST', data).then(fillMapWithNewMarkers)
+            userService.postReq('https://projectxnr.herokuapp.com/businesses/shop&enter', 'POST', data).then(fillMapWithNewMarkers);
         }
         if ($scope.checkEntertainment && (!$scope.checkShop) && $scope.checkRestaurant) {
-            userService.postReq('https://projectxnr.herokuapp.com/businesses/rest&enter', 'POST', data).then(fillMapWithNewMarkers)
+            userService.postReq('https://projectxnr.herokuapp.com/businesses/rest&enter', 'POST', data).then(fillMapWithNewMarkers);
         }
         if ((!$scope.checkEntertainment) && $scope.checkShop && $scope.checkRestaurant) {
-            userService.postReq('https://projectxnr.herokuapp.com/businesses/rest&shop', 'POST', data).then(fillMapWithNewMarkers)
+            userService.postReq('https://projectxnr.herokuapp.com/businesses/rest&shop', 'POST', data).then(fillMapWithNewMarkers);
         }
         if (($scope.checkRestaurant && $scope.checkShop && $scope.checkEntertainment) || (!$scope.checkRestaurant && !$scope.checkShop && !$scope.checkEntertainment)) {
-            userService.postReq('https://projectxnr.herokuapp.com/businesses', 'POST', data).then(fillMapWithNewMarkers)
+            userService.postReq('https://projectxnr.herokuapp.com/businesses', 'POST', data).then(fillMapWithNewMarkers);
         }
     }
 
@@ -150,14 +150,14 @@ app.controller('map', function($scope, userService, $rootScope, $window, $locati
     // createmarker to populate from result array from a request
     var fillMapWithNewMarkers = function(data) {
 
-        markers = []
+        markers = [];
         markers[0] = {
             latitude: currentPosition.coords.latitude,
             longitude: currentPosition.coords.longitude,
             id: currentPosition.id,
             icon: {
                 url: '../../images/google-maps-hi.png',
-                scaledSize: new google.maps.Size(25, 40)
+                scaledSize: new google.maps.Size(25, 40);
             }
         }
 
