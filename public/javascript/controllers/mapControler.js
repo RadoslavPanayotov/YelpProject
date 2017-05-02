@@ -157,7 +157,7 @@ app.controller('map', function($scope, userService, $rootScope, $window, $locati
             id: currentPosition.id,
             icon: {
                 url: '../../images/google-maps-hi.png',
-                scaledSize: new google.maps.Size(25, 40);
+                scaledSize: new google.maps.Size(25, 40)
             }
         }
 
