@@ -11,6 +11,6 @@ app.controller('logout', function($scope, userService, $rootScope, $location, $w
                 $scope.data.error = { message: error, status: status }
 
             });
-        })
+        });
     }
 });

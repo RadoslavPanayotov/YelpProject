@@ -31,7 +31,7 @@ app.controller('map', function($scope, userService, $rootScope, $window, $locati
             $scope.items.splice(index, 1)
         }
         // function to find the users lat and lng coordinates
-    getLocation()
+    getLocation();
 
     function getLocation() {
         if (navigator.geolocation) {
@@ -97,7 +97,7 @@ app.controller('map', function($scope, userService, $rootScope, $window, $locati
             url: '../../images/google-maps-hi.png',
             scaledSize: new google.maps.Size(25, 40)
         }
-    }]
+    }];
 
     // function to create markers.
     var createMarker = function(obj, index) {
@@ -115,10 +115,10 @@ app.controller('map', function($scope, userService, $rootScope, $window, $locati
             return mark
         }
         // get the user location and set it as first marker 
-    getLocation()
+   
 
     // set initial markers on map
-    $scope.mapMarkers = markers
+    $scope.mapMarkers = markers;
 
     // sends search request to backend from input, receives an array of objects, 
     $scope.searchMe = function() {
@@ -186,6 +186,6 @@ app.controller('map', function($scope, userService, $rootScope, $window, $locati
         $scope.removeItem = function(index) {
             $scope.businesses.splice(index, 1);
         }
-        $scope.showResults = true
+        $scope.showResults = true;
     }
-})
+});
