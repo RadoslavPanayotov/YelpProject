@@ -7,7 +7,6 @@ app.controller('reviewsController', function ($scope, $rootScope, userService, $
   $scope.reviewForWriting = false
   $scope.businessItem = $rootScope.clickedItem
   $scope.writeAReview = function () {
-    console.log('sasa')
     $scope.reviewForWriting = true;
   }
   $scope.reviewError = '';
@@ -18,8 +17,7 @@ app.controller('reviewsController', function ($scope, $rootScope, userService, $
       $scope.reviewError = "You can't send an empty review!";
       return;
     }
-    userService.postReq("http://localhost:3000/reviews","POST",data).then(function(data){
-      console.log(data);
+    userService.postReq("https://projectxnr.herokuapp.com/reviews","POST",data).then(function(data){
     });
   }
   

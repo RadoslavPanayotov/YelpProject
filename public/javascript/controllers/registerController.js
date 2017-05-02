@@ -44,8 +44,8 @@ app.controller('register', function ($scope, $rootScope, userService, $window, $
             $scope.errorPassConfMessage = "";
         }
         // post request for creating new user
-        userService.postReq('http://localhost:3000/createUsers', 'POST', JSON.stringify($scope.user)).then(function (data) {
-            console.log(data);
+        userService.postReq('https://projectxnr.herokuapp.com/createUsers', 'POST', JSON.stringify($scope.user)).then(function (data) {
+
             if (data.data.value == "true") {
                 $rootScope.loggedCurrentUser = $scope.user.username;
                 $rootScope.showLogin = false;
@@ -59,7 +59,7 @@ app.controller('register', function ($scope, $rootScope, userService, $window, $
         }).catch(function (error, status) {
             $scope.data = {};
             $scope.data.error = { message: error, status: status };
-            //console.log($scope.data.error.status);
+
         })
     }
 })

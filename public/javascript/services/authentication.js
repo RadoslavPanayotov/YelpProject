@@ -3,7 +3,7 @@ app.factory('authentication', function ($http, $rootScope, $location, userServic
     function Auth() {
         var self = this;
         self.authMe = function () {
-            return $http.get("http://localhost:3000/auth");
+            return $http.get("https://projectxnr.herokuapp.com/auth");
         };
     };
     return new Auth();

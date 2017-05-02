@@ -13,10 +13,10 @@ app.controller('map', function ($scope, userService, $rootScope, $window, $locat
   $scope.reviewWrite = function (index) {
     $rootScope.clickedItem = $scope.businesses[index]
 
-    console.log($rootScope.clickedItem)
+
     if (logedUser != undefined) {
       $rootScope.clickedItem = $scope.businesses[index];
-      console.log($rootScope.clickedItem);
+
       $location.path('/reviews');
     } else {
       alert('You have to be logged in!')
@@ -35,7 +35,7 @@ app.controller('map', function ($scope, userService, $rootScope, $window, $locat
   function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition, function (error) {
-        console.log('Failed to get current position ' + error)
+        
       }
         , {
           enableHighAccuracy: true,
@@ -108,7 +108,7 @@ app.controller('map', function ($scope, userService, $rootScope, $window, $locat
       image: obj.image,
       rate: obj.rate || null
     }
-    console.log('vikam te')
+
     mark.content = '<div class="infoWindowContent">' + obj.description + '</div>'
     return mark
   }
@@ -147,7 +147,7 @@ app.controller('map', function ($scope, userService, $rootScope, $window, $locat
   // Empties markers array, sets user location as initial marker and uses 
   // createmarker to populate from result array from a request
   var fillMapWithNewMarkers = function (data) {
-    console.log(data)
+
     markers = []
     markers[0] = {
       latitude: currentPosition.coords.latitude,
@@ -173,7 +173,7 @@ app.controller('map', function ($scope, userService, $rootScope, $window, $locat
       $scope.businesses[index].id = index;
       var sum = 0;
       var array = data.data[index].rating;
-      console.log("array " + array);
+      
       for(var count = 0; count < array.length; count++){
         sum += array[count];
       }
