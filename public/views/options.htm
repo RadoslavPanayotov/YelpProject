@@ -1,24 +1,34 @@
-<div>
+<div ng-show="passConf">
     <label for="passConf">Password confirmation:</label>
-    <form action="">
-        <input id="passConf" type="text"></input>
+    <form ng-submit="checkPass()">
+        <input id="passConf" ng-model="passConfirmation" type="password" name="passConfirm"></input>
+        <p>{{confPassError}}</p>
+        <button id="createAccount" type="submit">Ok</button>
     </form>
 </div>
-<div ng-shpw="">
-    <form action="">
+<div ng-hide="passConf">
+    <form ng-submit="sendNewUser()">
         <label for="newUser">Username</label>
-        <input id="newUser"type="text"></input>
+        <input id="newUser" type="text" ng-model="newUser"></input>
+        <p>{{newUsernameError}}</p>
+        <button id="createAccount" type="submit">Change username</button>
     </form>
-    <form action="">
+    <form ng-submit="sendNewPass()">
         <label for="newPass">Password</label>
-        <input id="newPass"type="text"></input>
+        <input id="newPass" type="password" ng-model="newPass"></input>
+        <p>{{newPassError}}</p>
+        <button id="createAccount" type="submit">Change password</button>
     </form>
-    <form action="">
-        <label for="newEmail">Email</label>
-        <input id="newEmail"type="text"></input>
+    <form ng-submit="sendNewEmail()">
+        <label for="newEmail">Email</label ng-model="newEmail">
+        <input id="newEmail" type="email" ng-model="newEmail"></input>
+        <p>{{newEmailError}}</p>
+        <button id="createAccount" type="submit">Change email</button>
     </form>
-    <form action="">
+    <!--<form ng-submit="checkPass()">
         <label for="newProfPic">Profile picture</label>
-        <input id="newProfPic" type="text"></input>
-    </form>
+        <input id="newProfPic" type="text" ng-model="newImageUrl"></input>
+        <p>{{confPassError}}</p>
+        <button id="createAccount" type="submit">Change profile picture</button>
+    </form>-->
 </div>

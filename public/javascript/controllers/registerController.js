@@ -50,7 +50,7 @@ app.controller('register', function ($scope, $rootScope, userService, $window, $
                 $rootScope.showLogin = false;
                 $rootScope.showSignUp = false;
                 $rootScope.showLogout = true;
-                $window.sessionStorage.setItem("userId", data.data.user);
+                $window.sessionStorage.setItem('userId', data.data.user);
                 $location.path('/map');
             } else {
                 $scope.errorMessage = "There is a user with such a username or an email!"

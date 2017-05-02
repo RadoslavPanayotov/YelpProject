@@ -16,10 +16,10 @@
     <script type=text/javascript src="./javascript/angular-route/angular-route.js"></script>
     <script type=text/javascript src="./javascript/angular-route/angular-route.min.js"></script>
     <script type=text/javascript src="./javascript/angular-google-maps/dist/angular-google-maps.min.js"></script>
-    <script type=text/javascript src="./javascript/angular-animate/angular-animate.js"></script>
+    <!--<script type=text/javascript src="./javascript/angular-animate/angular-animate.js"></script>
     <script type=text/javascript src="./javascript/angular-animate/angular-animate.min.js"></script>
     <script type=text/javascript src="./javascript/angular-animate/angular-animate.js"></script>
-    <script type=text/javascript src="./javascript/angular-animate/angular-animate.min.js"></script>
+    <script type=text/javascript src="./javascript/angular-animate/angular-animate.min.js"></script>-->
     <script>
         document.addEventListener("DOMContentLoaded", function (event) {
             window.location.hash = "#map";
@@ -47,6 +47,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Sign up button-->
+                    <li><a href="#options" ng-click="showDiv()" ng-show="showLogout"><span class="glyphicon glyphicon-wrench"></span> Options</a></li>
                     <li><a href="#register" ng-click="showDiv()" ng-show="showSignUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                     <!-- Login button -->
                     <li><a href="#/login" ng-show="showLogin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>

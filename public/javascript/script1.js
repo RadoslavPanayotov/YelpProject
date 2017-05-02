@@ -1,5 +1,5 @@
 var app = angular.module('myApp', ['ngRoute',
-  'uiGmapgoogle-maps', 'ngAnimate'
+  'uiGmapgoogle-maps',
 ]);
 app.run(function ($rootScope) {
   $rootScope.showLogin = true;
@@ -27,7 +27,7 @@ app.config(function ($routeProvider) {
       templateUrl: '../views/reviews.htm',
       controller: 'reviewsController'
     })
-    .when('/reviews', {
+    .when('/options', {
       templateUrl: '../views/options.htm',
       controller: 'optionsController'
     })
