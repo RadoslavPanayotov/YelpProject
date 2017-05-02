@@ -439,6 +439,7 @@ span.input-group-addon i {
 
 #writeReviewAnchor {
     text-align: center;
+    cursor: pointer;
 }
 
 
