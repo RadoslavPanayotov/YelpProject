@@ -19,10 +19,6 @@ app.config(function ($routeProvider) {
       templateUrl: '../views/map.htm',
       controller: 'map'
     })
-    .when('/req', {
-      templateUrl: '../views/req.htm',
-      controller: 'bus'
-    })
     .when('/reviews', {
       templateUrl: '../views/reviews.htm',
       controller: 'reviewsController'

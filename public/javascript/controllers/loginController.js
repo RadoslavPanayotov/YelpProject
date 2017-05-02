@@ -6,9 +6,9 @@ app.controller('login', function ($scope, userService, $rootScope, $location, $w
   $rootScope.showLogout = false;
   $scope.logMe = function () {
     userService.postReq('http://localhost:3000/login', 'POST', JSON.stringify($scope.user)).then(function (data) {
-      console.log(data)
       if (data.data.value == 'true') {
-        $window.sessionStorage.setItem('userId', data.data.user)
+        $window.sessionStorage.setItem('userId', data.data.user);
+        $rootScope.loggedCurrentUser = $scope.user.username;
         $rootScope.showLogin = false;
         $rootScope.showSignUp = false;
         $rootScope.showLogout = true;

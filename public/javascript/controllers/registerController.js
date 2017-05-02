@@ -47,6 +47,7 @@ app.controller('register', function ($scope, $rootScope, userService, $window, $
         userService.postReq('http://localhost:3000/createUsers', 'POST', JSON.stringify($scope.user)).then(function (data) {
             console.log(data);
             if (data.data.value == "true") {
+                $rootScope.loggedCurrentUser = $scope.user.username;
                 $rootScope.showLogin = false;
                 $rootScope.showSignUp = false;
                 $rootScope.showLogout = true;

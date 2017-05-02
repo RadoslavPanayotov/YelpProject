@@ -16,15 +16,7 @@
     <script type=text/javascript src="./javascript/angular-route/angular-route.js"></script>
     <script type=text/javascript src="./javascript/angular-route/angular-route.min.js"></script>
     <script type=text/javascript src="./javascript/angular-google-maps/dist/angular-google-maps.min.js"></script>
-<<<<<<< HEAD
-    <!--<script type=text/javascript src="./javascript/angular-animate/angular-animate.js"></script>
-    <script type=text/javascript src="./javascript/angular-animate/angular-animate.min.js"></script>
-    <script type=text/javascript src="./javascript/angular-animate/angular-animate.js"></script>
-=======
-    
-    <!--<script type=text/javascript src="./javascript/angular-animate/angular-animate.js"></script>
->>>>>>> b1f8171d2ac33ca8a3f09cb7ad170d7669bc1e5b
-    <script type=text/javascript src="./javascript/angular-animate/angular-animate.min.js"></script>-->
+
     <script>
         document.addEventListener("DOMContentLoaded", function (event) {
             window.location.hash = "#map";
@@ -42,22 +34,22 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <!-- Website name -->
-                    <a class="navbar-brand" href="#">ProjectX</a>
+                    <a class="navbar-brand" >ProjectX</a>
                 </div>
                 <ul class="nav navbar-nav">
                     <!-- Nav bar locations -->
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Page 1</a></li>
-                    <li><a href="#">Page 2</a></li>
+                    <li><a href="#/map">Home</a></li>
+                    
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <!-- Sign up button-->
+                     <!-- Options button-->
                     <li><a href="#options" ng-click="showDiv()" ng-show="showLogout"><span class="glyphicon glyphicon-wrench"></span> Options</a></li>
+                     <!-- Sign up button-->
                     <li><a href="#register" ng-click="showDiv()" ng-show="showSignUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                     <!-- Login button -->
                     <li><a href="#/login" ng-show="showLogin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                     <!-- Logout button -->
-                    <li><a ng-controller="logout" ng-click="logOut()" ng-show="showLogout"><span class="glyphicon glyphicon-log-out">Logout</span></a></li>
+                    <li><a ng-controller="logout" ng-click="logOut()" ng-show="showLogout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
                 </ul>
             </div>
         </nav>
@@ -69,7 +61,7 @@
     </div>
     <!--App module -->
 
-    <script type=text/javascript src="./javascript/script1.js"></script>
+    <script type=text/javascript src="./javascript/myaApp.js"></script>
 
     <!--Services -->
     <script type=text/javascript src="./javascript/services/userService.js"></script>
