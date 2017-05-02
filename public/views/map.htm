@@ -11,7 +11,7 @@
     <form role="form" ng-submit="searchMe()">
         <!-- Search Field -->
         <div class="row">
-            <h1 class="text-center">Enter key word</h1>
+            <h1 id="searchRes" class="text-center">Enter key word</h1>
             <div class="form-group">
                 <div class="input-group">
                     <input class="form-control" type="text" ng-model="searchResult" name="search" placeholder="Search" required/>
@@ -67,7 +67,7 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-12">
-                                <a id='writeAReviewAnchor' data="{{business.id}}" ng-click="reviewWrite(business.id)">write a review</a>
+                                <a id='writeAReviewA' data="{{business.id}}" ng-click="reviewWrite(business.id)">write a review</a>
                             </div>
                             <div class="col-xs-12">
                                 <span ng-click="removeItem($index)">Remove</span>
