@@ -122,25 +122,25 @@ app.controller('map', function ($scope, userService, $rootScope, $window, $locat
   $scope.searchMe = function () {
     var data = { value: $scope.searchResult }
     if ($scope.checkRestaurant && (!$scope.checkShop) && (!$scope.checkEntertainment)) {
-      userService.postReq('http://localhost:3000/businesses/restaurants', 'POST', data).then(fillMapWithNewMarkers)
+      userService.postReq('https://projectxnr.herokuapp.com/businesses/restaurants', 'POST', data).then(fillMapWithNewMarkers)
     }
     if ((!$scope.checkRestaurant) && $scope.checkShop && (!$scope.checkEntertainment)) {
-      userService.postReq('http://localhost:3000/businesses/shopping', 'POST', data).then(fillMapWithNewMarkers)
+      userService.postReq('https://projectxnr.herokuapp.com/businesses/shopping', 'POST', data).then(fillMapWithNewMarkers)
     }
     if ($scope.checkEntertainment && (!$scope.checkShop) && (!$scope.checkRestaurant)) {
-      userService.postReq('http://localhost:3000/businesses/entertainment', 'POST', data).then(fillMapWithNewMarkers)
+      userService.postReq('hhttps://projectxnr.herokuapp.com/businesses/entertainment', 'POST', data).then(fillMapWithNewMarkers)
     }
     if ($scope.checkEntertainment && $scope.checkShop && (!$scope.checkRestaurant)) {
-      userService.postReq('http://localhost:3000/businesses/shop&enter', 'POST', data).then(fillMapWithNewMarkers)
+      userService.postReq('https://projectxnr.herokuapp.com/businesses/shop&enter', 'POST', data).then(fillMapWithNewMarkers)
     }
     if ($scope.checkEntertainment && (!$scope.checkShop) && $scope.checkRestaurant) {
-      userService.postReq('http://localhost:3000/businesses/rest&enter', 'POST', data).then(fillMapWithNewMarkers)
+      userService.postReq('https://projectxnr.herokuapp.com/businesses/rest&enter', 'POST', data).then(fillMapWithNewMarkers)
     }
     if ((!$scope.checkEntertainment) && $scope.checkShop && $scope.checkRestaurant) {
-      userService.postReq('http://localhost:3000/businesses/rest&shop', 'POST', data).then(fillMapWithNewMarkers)
+      userService.postReq('https://projectxnr.herokuapp.com/businesses/rest&shop', 'POST', data).then(fillMapWithNewMarkers)
     }
     if (($scope.checkRestaurant && $scope.checkShop && $scope.checkEntertainment) || (!$scope.checkRestaurant && !$scope.checkShop && !$scope.checkEntertainment)) {
-      userService.postReq('http://localhost:3000/businesses', 'POST', data).then(fillMapWithNewMarkers)
+      userService.postReq('https://projectxnr.herokuapp.com/businesses', 'POST', data).then(fillMapWithNewMarkers)
     }
   }
 
