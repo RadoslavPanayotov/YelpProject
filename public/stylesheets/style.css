@@ -633,12 +633,15 @@ span.input-group-addon i {
     text-align: center;
 }
 
-#cont {
+#cont  {
     display: inline-block;
     width: 100%;
     text-align: center;
+    color: black;   
 }
-
+#cont input{
+    color: #000
+}
 #passVal {
     display: inline-block;
     width: 30%;
