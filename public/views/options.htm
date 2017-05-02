@@ -1,4 +1,4 @@
-<div ng-show="passConf">
+<!--<div ng-show="passConf">
     <label for="passConf">Password confirmation:</label>
     <form ng-submit="checkPass()">
         <input id="passConf" ng-model="passConfirmation" type="password" name="passConfirm"></input>
@@ -30,5 +30,82 @@
         <input id="newProfPic" type="text" ng-model="newImageUrl"></input>
         <p>{{confPassError}}</p>
         <button id="createAccount" type="submit">Change profile picture</button>
-    </form>-->
+    </form>
+</div>-->
+<div id="cont">
+    <div id="passVal" ng-show="passConf">
+        <label for="passConf">Password confirmation:</label>
+        <form ng-submit="checkPass()">
+            <input id="passConf" ng-model="passConfirmation" type="password" name="passConfirm"></input>
+            <p>{{confPassError}}</p>
+            <button id="createAccountBut" type="submit">Ok</button>
+        </form>
+    </div>
+</div>
+
+<div class="container" ng-hide="passConf">
+    <div class="row main">
+        <div class="main-login main-center">
+            <div class="form-group">
+                <form ng-submit="sendNewUser()">
+                    <label for="newUser" class="cols-sm-2 control-label">Your new Username</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
+                            <input id="newUser" type="text" ng-model="newUser" class="form-control" name="username" placeholder="Enter your new Username" required="" />
+                        </div>
+                        <div class="cols-sm-12">
+                            <p>{{newUsernameError}}</p>
+                        </div>
+                        <div class="cols-sm-12">
+                            <button id="createAccount" type="submit">Change username</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="form-group">
+                <form ng-submit="sendNewEmail()">
+                    <label for="newEmail" class="cols-sm-2 control-label">Your Email</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
+                            <input id="newEmail" type="email" ng-model="newEmail" class="form-control" name="email" placeholder="Enter your new Email" required="" />
+
+                        </div>
+                        <div class="cols-sm-12">
+                            <p>{{newEmailError}}</p>
+                        </div>
+                        <div class="cols-sm-12">
+                            <button id="createAccount" type="submit">Change email</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+
+            <div class="form-group">
+                <form ng-submit="sendNewPass()">
+                    <label for="newProfPic" class="cols-sm-2 control-label">Your Password</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user" aria-hidden="true"></i>
+                                </span>
+                            <input id="newPass" type="password" ng-model="newPass" class="form-control" name="pass" placeholder="Enter your new Password" required="" />
+
+                        </div>
+                        <div class="cols-sm-12">
+                            <p> {{newPassError}}</p>
+                        </div>
+                        <div class="cols-sm-12">
+                            <button id="createAccount" type="submit">Change  Pass</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 </div>

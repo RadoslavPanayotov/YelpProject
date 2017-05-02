@@ -33,8 +33,23 @@ a {
 
 .angular-google-map-container {
     margin: auto;
-    width: 500px;
-    height: 400px;
+    width: 40em;
+    height: 30em;
+}
+
+@media screen and (max-width: 600px) {
+    .angular-google-map-container {
+        margin: auto;
+        width: 25em;
+        height: 20em;
+    }
+}
+@media screen and (max-width: 300px) {
+    .angular-google-map-container {
+        margin: auto;
+        width: 15em;
+        height: 10em;
+    }
 }
 
 #map {
@@ -110,101 +125,104 @@ li span {
 /* Serach Bar*/
 
 .checkBut div {
-  clear: both;
-  overflow: hidden;
+    clear: both;
+    overflow: hidden;
 }
 
 .checkBut label {
-  width: 100%;
-  border-radius: 3px;
-  border: 1px solid khaki;
-  font-weight: normal;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid khaki;
+    font-weight: normal;
 }
 
-.checkBut-default, .checkBut-primary, .checkBut-success  > label{
-  color: white
+.checkBut-default,
+.checkBut-primary,
+.checkBut-success>label {
+    color: white
 }
 
 .checkBut input[type="checkbox"]:empty {
-  display: none;
+    display: none;
 }
 
-.checkBut input[type="checkbox"]:empty ~ label {
-  position: relative;
-  line-height: 2.5em;
-  text-indent: 3.25em;
-  margin-top: 2em;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+.checkBut input[type="checkbox"]:empty~label {
+    position: relative;
+    line-height: 2.5em;
+    text-indent: 3.25em;
+    margin-top: 2em;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-.checkBut input[type="checkbox"]:empty ~ label:before {
-  position: absolute;
-  display: block;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  content: '';
-  width: 2.5em;
-  background: #117311;
-  border-radius: 3px 0 0 3px;
+.checkBut input[type="checkbox"]:empty~label:before {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    width: 2.5em;
+    background: #117311;
+    border-radius: 3px 0 0 3px;
 }
 
-
-.checkBut input[type="checkbox"]:hover:not(:checked) ~ label {
-  color: khaki;
+.checkBut input[type="checkbox"]:hover:not(:checked)~label {
+    color: khaki;
 }
 
-.checkBut input[type="checkbox"]:hover:not(:checked) ~ label:before {
-  content: '\2714';
-  text-indent: .9em;
-  color: #A2A;
+.checkBut input[type="checkbox"]:hover:not(:checked)~label:before {
+    content: '\2714';
+    text-indent: .9em;
+    color: #A2A;
 }
 
-.checkBut input[type="checkbox"]:checked ~ label {
-  color: #4F4;
+.checkBut input[type="checkbox"]:checked~label {
+    color: #4F4;
 }
 
-.checkBut input[type="checkbox"]:checked ~ label:before {
-  content: '\2714';
-  text-indent: .9em;
-  color: #333;
-  background-color: #ccc;
+.checkBut input[type="checkbox"]:checked~label:before {
+    content: '\2714';
+    text-indent: .9em;
+    color: #333;
+    background-color: #ccc;
 }
 
-.checkBut input[type="checkbox"]:focus ~ label:before {
-  box-shadow: 0 0 0 3px #999;
+.checkBut input[type="checkbox"]:focus~label:before {
+    box-shadow: 0 0 0 3px #999;
 }
 
-.checkBut-default input[type="checkbox"]:checked ~ label:before {
-  color: #333;
-  background-color: #ccc;
+.checkBut-default input[type="checkbox"]:checked~label:before {
+    color: #333;
+    background-color: #ccc;
 }
 
-.checkBut-primary input[type="checkbox"]:checked ~ label:before {
-  color: #fff;
-  background-color: #337ab7;
+.checkBut-primary input[type="checkbox"]:checked~label:before {
+    color: #fff;
+    background-color: #337ab7;
 }
 
-.checkBut-success input[type="checkbox"]:checked ~ label:before {
-  color: #fff;
-  background-color: #5cb85c;
+.checkBut-success input[type="checkbox"]:checked~label:before {
+    color: #fff;
+    background-color: #5cb85c;
 }
 
 
 /* Result Articles*/
 
-#artc-res{
-  background-color: khaki;
+#artc-res {
+    background-color: khaki;
+}
 
+.bg-info {
+    padding: 1.3em;
+    border-radius: 10%;
 }
-.bg-info{
-  padding: 1.3em;
-  border-radius: 10%;
-}
+
+
 /*
 /*.fade {
   transition: 1s linear all;
@@ -416,60 +434,70 @@ span.input-group-addon i {
     border-radius: 20%;
 }
 
+
 /*  REVIEWS */
 
-#writeReviewAnchor{
-  text-align: center;
-  border: 1px solid red;
- border-radius: 30%;
-}
-#writeReviewAnchor:hover{
-  background-color: #45fe34
+#writeReviewAnchor {
+    text-align: center;
+    border: 1px solid red;
+    border-radius: 30%;
 }
 
-
+#writeReviewAnchor:hover {
+    background-color: #45fe34
+}
 
 
 /* uses font awesome for social icons */
-@import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
 
-.page-header{
-  text-align: center;    
+@import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+.page-header {
+    text-align: center;
 }
+
 
 /*social buttons*/
-.btn-social{
-  color: white;
-  opacity:0.9;
+
+.btn-social {
+    color: white;
+    opacity: 0.9;
 }
+
 .btn-social:hover {
-  color: white;
-    opacity:1;
+    color: white;
+    opacity: 1;
 }
+
 .btn-facebook {
-background-color: #3b5998;
-opacity:0.9;
+    background-color: #3b5998;
+    opacity: 0.9;
 }
+
 .btn-twitter {
-background-color: #00aced;
-opacity:0.9;
+    background-color: #00aced;
+    opacity: 0.9;
 }
+
 .btn-linkedin {
-background-color:#0e76a8;
-opacity:0.9;
+    background-color: #0e76a8;
+    opacity: 0.9;
 }
-.btn-github{
-  background-color:#000000;
-  opacity:0.9;
+
+.btn-github {
+    background-color: #000000;
+    opacity: 0.9;
 }
+
 .btn-google {
-  background-color: #c32f10;
-  opacity: 0.9;
+    background-color: #c32f10;
+    opacity: 0.9;
 }
-.btn-stackoverflow{
-  background-color: #D38B28;
-  opacity: 0.9;
+
+.btn-stackoverflow {
+    background-color: #D38B28;
+    opacity: 0.9;
 }
+
 
 /* resume stuff */
 
@@ -486,9 +514,11 @@ opacity:0.9;
     margin-bottom: 5px;
     padding: 20px;
 }
+
 .bs-callout:last-child {
     margin-bottom: 0px;
 }
+
 .bs-callout h4 {
     margin-bottom: 10px;
     margin-top: 0;
@@ -498,33 +528,35 @@ opacity:0.9;
     border-left-color: #d9534f;
 }
 
-.bs-callout-danger h4{
+.bs-callout-danger h4 {
     color: #d9534f;
 }
 
-.resume .list-group-item:first-child, .resume .list-group-item:last-child{
-  border-radius:0;
+.resume .list-group-item:first-child,
+.resume .list-group-item:last-child {
+    border-radius: 0;
 }
+
 
 /*makes an anchor inactive(not clickable)*/
+
 .inactive-link {
-   pointer-events: none;
-   cursor: default;
+    pointer-events: none;
+    cursor: default;
 }
 
-.resume-heading .social-btns{
-  margin-top:15px;
-}
-.resume-heading .social-btns i.fa{
-  margin-left:-5px;
+.resume-heading .social-btns {
+    margin-top: 15px;
 }
 
-
+.resume-heading .social-btns i.fa {
+    margin-left: -5px;
+}
 
 @media (max-width: 992px) {
-  .resume-heading .social-btn-holder{
-    padding:5px;
-  }
+    .resume-heading .social-btn-holder {
+        padding: 5px;
+    }
 }
 
 
@@ -532,62 +564,91 @@ opacity:0.9;
 
 .progress-bar {
     text-align: left;
-	white-space: nowrap;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	cursor: pointer;
+    white-space: nowrap;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
 }
 
-.progress-bar > .progress-type {
-	padding-left: 10px;
+.progress-bar>.progress-type {
+    padding-left: 10px;
 }
 
 .progress-meter {
-	min-height: 15px;
-	border-bottom: 2px solid rgb(160, 160, 160);
-  margin-bottom: 15px;
+    min-height: 15px;
+    border-bottom: 2px solid rgb(160, 160, 160);
+    margin-bottom: 15px;
 }
 
-.progress-meter > .meter {
-	position: relative;
-	float: left;
-	min-height: 15px;
-	border-width: 0px;
-	border-style: solid;
-	border-color: rgb(160, 160, 160);
+.progress-meter>.meter {
+    position: relative;
+    float: left;
+    min-height: 15px;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(160, 160, 160);
 }
 
-.progress-meter > .meter-left {
-	border-left-width: 2px;
+.progress-meter>.meter-left {
+    border-left-width: 2px;
 }
 
-.progress-meter > .meter-right {
-	float: right;
-	border-right-width: 2px;
+.progress-meter>.meter-right {
+    float: right;
+    border-right-width: 2px;
 }
 
-.progress-meter > .meter-right:last-child {
-	border-left-width: 2px;
+.progress-meter>.meter-right:last-child {
+    border-left-width: 2px;
 }
 
-.progress-meter > .meter > .meter-text {
-	position: absolute;
-	display: inline-block;
-	bottom: -20px;
-	width: 100%;
-	font-weight: 700;
-	font-size: 0.85em;
-	color: rgb(160, 160, 160);
-	text-align: left;
+.progress-meter>.meter>.meter-text {
+    position: absolute;
+    display: inline-block;
+    bottom: -20px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 0.85em;
+    color: rgb(160, 160, 160);
+    text-align: left;
 }
 
-.progress-meter > .meter.meter-right > .meter-text {
-	text-align: right;
+.progress-meter>.meter.meter-right>.meter-text {
+    text-align: right;
 }
-#revImg{
-text-align: center;
+
+#revImg {
+    text-align: center;
 }
-#butRev{
-  text-align: right;
+
+#butRev {
+    text-align: right;
+}
+
+
+/* OPTIONS HTM */
+
+#ratingRev {
+    text-align: center;
+}
+
+#cont {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+#passVal {
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    background-color: #00B7FF;
+    border-radius: 5%;
+    color: #fff;
+}
+
+#createAccountBut {
+    border-radius: 50%;
+    margin-bottom: 0.3em;
 }

@@ -14,7 +14,7 @@
                                     <figure id="revImg">
                                         <img class="img-thumbnail img-responsive" height="300" width="300" ng-src="{{businessItem.image}}">
                                     </figure>
-
+                                    <p id="ratingRev">{{businessItem.currentRating}}</p>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-8">
@@ -22,28 +22,32 @@
 
                                         <li class="list-group-item"><i class="glyphicon glyphicon-phone"></i> {{businessItem.phone}} </li>
                                         <li class="list-group-item"><i class="glyphicon glyphicon-envelope"></i> {{businessItem.address}}</li>
-                                           <li class="list-group-item"><i class="glyphicon glyphicon-list-alt"></i> {{businessItem.description}}</li>
+                                        <li class="list-group-item"><i class="glyphicon glyphicon-list-alt"></i> {{businessItem.description}}</li>
                                     </ul>
                                 </div>
                                 <div id="writeReviewAnchor" class="col-xs-12">
-                                    <a ng-click="writeAReview()" >Напиши ревю</a>
+                                    <a ng-click="writeAReview()">Напиши ревю</a>
                                 </div>
                             </div>
                         </div>
+
                     </div>
-                     <div ng-show="reviewForWriting" class="bs-callout bs-callout-danger">
+                    <div ng-show="reviewForWriting" class="bs-callout bs-callout-danger">
                         <h4>Ревю</h4>
-                       <textarea ng-model="textarea" rows="4" cols="100" ></textarea>
-                       <p>{{reviewError}}</p>
-                       <div id="butRev">
-                       <button ng-submit="submitReview()"></button>
-                       </div>
+                        <form ng-submit="submitReview()">
+                            <textarea ng-model="textarea" rows="4" cols="100"></textarea>
+                            <p>{{reviewError}}</p>
+                            <div id="butRev">
+                                <button type="submit">Submit ypur review</button>
+                            </div>
+                        </form>
                     </div>
                     <div ng-repeat="item in businessItem.reviews" class="bs-callout bs-callout-danger">
                         <h4>{{item.author}}</h4>
-                        <p>{{item.text}}<p>
+                        <p>{{item.text}}
+                            <p>
                     </div>
-                   
+
                 </div>
             </div>
         </div>

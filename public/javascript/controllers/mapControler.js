@@ -171,6 +171,14 @@ app.controller('map', function ($scope, userService, $rootScope, $window, $locat
     for (var index = 0; index <= data.data.length - 1; index++) {
       $scope.businesses.push(data.data[index]);
       $scope.businesses[index].id = index;
+      var sum = 0;
+      var array = data.data[index].rating;
+      console.log("array " + array);
+      for(var count = 0; count < array.length; count++){
+        sum += array[count];
+      }
+      sum /= array.length;
+      $scope.businesses[index].currentRating = Math.round(sum * 10)/10;
     }
     $scope.removeItem = function (index) {
       $scope.businesses.splice(index, 1);
