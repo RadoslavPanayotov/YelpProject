@@ -439,13 +439,9 @@ span.input-group-addon i {
 
 #writeReviewAnchor {
     text-align: center;
-    border: 1px solid red;
-    border-radius: 30%;
 }
 
-#writeReviewAnchor:hover {
-    background-color: #45fe34
-}
+
 
 
 /* uses font awesome for social icons */
