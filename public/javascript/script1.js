@@ -1,5 +1,5 @@
 var app = angular.module('myApp', ['ngRoute',
-  'uiGmapgoogle-maps',
+  'uiGmapgoogle-maps'
 ]);
 app.run(function ($rootScope) {
   $rootScope.showLogin = true;

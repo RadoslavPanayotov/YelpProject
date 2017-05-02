@@ -6,6 +6,7 @@ app.controller('map', function ($scope, userService, $rootScope, $window, $locat
     $rootScope.showSignUp = false
     $rootScope.showLogout = true
   }
+
   $scope.businesses = []
   $scope.showResults = true
   $scope.reviewShow = false
@@ -164,15 +165,15 @@ app.controller('map', function ($scope, userService, $rootScope, $window, $locat
     }
 
     // Reset markers on map
-    $scope.mapMarkers = markers
-
+    $scope.mapMarkers = markers;
+    $scope.rating = 0;
 
     for (var index = 0; index <= data.data.length - 1; index++) {
-      $scope.businesses.push(data.data[index])
-      $scope.businesses[index].id = index
+      $scope.businesses.push(data.data[index]);
+      $scope.businesses[index].id = index;
     }
     $scope.removeItem = function (index) {
-      $scope.businesses.splice(index, 1)
+      $scope.businesses.splice(index, 1);
     }
     $scope.showResults = true
   }

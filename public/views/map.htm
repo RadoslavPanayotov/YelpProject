@@ -3,39 +3,74 @@
         <a href="#" ng-click="openInfoWindow($event, markers[0])">{{markers[0].title}}</a>
     </ui-gmap-markers>
 </ui-gmap-google-map>
-<h1>lele</h1>
-<form class="md-form form-sm" ng-submit="searchMe()">
-    <label class="radio-inline">
-        <input type="checkbox" name="checkBoxRest"    ng-click="clickForCheck()" ng-model="checkRestaurant"  />Restaurants</label>
-    <label class="radio-inline">
-        <input type="checkbox"  ng-model="checkShop"  ng-click="clickForCheck()" name="checkBoxShop"/>Shopping</label>
-    <label class="radio-inline">
-        <input  type="checkbox" name="checkBoxEnter" ng-model="checkEntertainment" ng-click="clickForCheck()"/>Entertainment</label>
 
-    <input type="text" name="searchBar" id="searchBar" ng-model="searchResult" class="form-control" />
-    <label for="searchBar" class="">Example label</label>
-    <button type="submit" class="btn btn-deep-purple">Search</button>
-</form>
+
+
+<div id="containerSearch">
+    <form role="form" ng-submit="searchMe()">
+        <!-- Search Field -->
+        <div class="row">
+            <h1 class="text-center">Enter key word</h1>
+            <div class="form-group">
+                <div class="input-group">
+                    <input class="form-control" type="text" ng-model="searchResult" name="search" placeholder="Search" required/>
+                    <span class="input-group-btn">
+                                <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"><span style="margin-left:10px;">Search</span></button>
+                    </span>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="checkBut">
+                    <div class="checkBut-default">
+                        <input type="checkbox" id="checkbox1" checked name="checkBoxRest" ng-click="clickForCheck()" ng-model="checkRestaurant" />
+                        <label for="checkbox1">Restaurants</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="checkBut">
+                    <div class="checkBut-primary">
+                        <input type="checkbox" id="checkbox2" checked ng-model="checkShop" ng-click="clickForCheck()" name="checkBoxShop" />
+                        <label for="checkbox2">Shopping</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="checkBut">
+                    <div class="checkBut-success">
+                        <input type="checkbox" id="checkbox3" checked name="checkBoxEnter" ng-model="checkEntertainment" ng-click="clickForCheck()" />
+                        <label for="checkbox3">Entertainment</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+
 <section ng-show="showResults" ng-repeat="business in businesses" ng-class>
     <article>
         <div class="container">
             <div class="panel">
                 <!--/stories-->
-                <div class="row">
+                <div id="artc-res" class="row">
                     <br>
                     <div class="col-md-2 col-sm-3 text-center">
-                        <img alt="" ng-src="{{business.image}}"class="img-thumbnail">
+                        <img alt="" ng-src="{{business.image}}" class="img-thumbnail">
                         <div class="row">
                             <div class="col-xs-12">
                                 <p>Rating: 0</p>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-9">
-                                <a data="{{business.id}}"ng-click="reviewWrite(business.id)" >write a review</a>
+                            <div class="col-xs-12">
+                                <a data="{{business.id}}" ng-click="reviewWrite(business.id)">write a review</a>
                             </div>
-                              <div class="col-xs-9">
-                                 <span ng-click="removeItem($index)">X</span>
+                            <div class="col-xs-12">
+                                <span ng-click="removeItem($index)">Remove</span>
                             </div>
                         </div>
                     </div>
@@ -52,15 +87,7 @@
                                 <p class="bg-info">
                                     {{business.description}}
                                 </p>
-                                <!--<h4>
-                                    <small style="font-family:courier,'new courier';" class="text-muted">rating<a href="#" class="text-muted">Read More</a></small>
-                                </h4>-->
                             </div>
-                        </div>
-                    </div>
-                    <div class='row'>
-                        <div>
-                            <textarea placeholder="Enter your review" id="review" cols="5" ng-show="reviewShow"></textarea>
                         </div>
                     </div>
                     <br>
@@ -68,6 +95,6 @@
             </div>
             <hr>
         </div>
-        </div>
+     
     </article>
 </section>
