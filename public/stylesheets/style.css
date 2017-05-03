@@ -37,18 +37,18 @@ a {
     height: 30em;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
     .angular-google-map-container {
         margin: auto;
         width: 25em;
         height: 20em;
     }
 }
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 450px) {
     .angular-google-map-container {
         margin: auto;
-        width: 15em;
-        height: 10em;
+        width: 90%;
+        height: 15em;
     }
 }
 
