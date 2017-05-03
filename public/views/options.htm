@@ -1,9 +1,10 @@
 
 <div id="cont">
-    <div id="passVal" ng-show="passConf">
-        <label for="passConf">Password confirmation:</label>
-        <form ng-submit="checkPass()">
-            <input id="passConf" ng-model="passConfirmation" type="password" name="passConfirm"></input>
+    <div ng-show="passConf">
+      
+        <form class="form-options" ng-submit="checkPass()">
+              <label class="form-opitons-heading" for="passConf">Password confirmation:</label>
+            <input  class="form-control" ng-model="passConfirmation" type="password" name="passConfirm"></input>
             <p>{{confPassError}}</p>
             <button id="createAccountBut" type="submit">Ok</button>
         </form>

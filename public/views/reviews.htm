@@ -35,7 +35,7 @@
                     <div ng-show="reviewForWriting" class="bs-callout bs-callout-danger">
                         <h4>Ревю</h4>
                         <form ng-submit="submitReview()">
-                            <textarea ng-model="textarea" rows="4" cols="100"></textarea>
+                            <textarea id="reviewArea" ng-model="textarea" rows="4" ></textarea>
                             <p>{{reviewError}}</p>
                             <div id="butRev">
                                 <button type="submit">Submit ypur review</button>
