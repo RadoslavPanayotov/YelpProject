@@ -221,7 +221,9 @@ li span {
     padding: 1.3em;
     border-radius: 10%;
 }
-
+#addressInfo{
+    background-color: lightgreen;
+}
 
 /*
 /*.fade {

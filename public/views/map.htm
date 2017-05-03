@@ -62,7 +62,7 @@
                         <img alt="" ng-src="{{business.image}}" class="img-thumbnail">
                         <div class="row">
                             <div class="col-xs-12">
-                                <p>Rating{{business.currentRating}}</p>
+                                <p>Rating: {{business.currentRating}}</p>
                             </div>
                         </div>
                         <div class="row">
@@ -77,8 +77,9 @@
                     <div class="col-md-10 col-sm-9">
                         <h3 class="text-primary">{{business.name}}</h3>
                         <div class="row">
-                            <div class="col-xs-9">
-                                <h4 class="label label-default">{{business.address}}</h4>
+                            <div class="col-xs-10"> 
+                               
+                                <p id="addressInfo">{{business.address}}</p>
                             </div>
                         </div>
                         <div class="row">
