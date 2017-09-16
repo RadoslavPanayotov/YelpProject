@@ -1,9 +1,8 @@
-
-    <ui-gmap-google-map center='map.center' zoom='map.zoom' options="options">
-        <ui-gmap-markers id="id" models="mapMarkers" coords="'self'" icon="'icon'" type="'cluster'" fit="true" chunk="10" events="map.markersEvents">
-            <a href="#" ng-click="openInfoWindow($event, markers[0])">{{markers[0].title}}</a>
-        </ui-gmap-markers>
-    </ui-gmap-google-map>
+<ui-gmap-google-map center='map.center' zoom='map.zoom' options="options">
+    <ui-gmap-markers id="id" models="mapMarkers" coords="'self'" icon="'icon'" type="'cluster'" fit="true" chunk="10" events="map.markersEvents">
+        <a href="#" ng-click="openInfoWindow($event, markers[0])">{{markers[0].title}}</a>
+    </ui-gmap-markers>
+</ui-gmap-google-map>
 
 
 
@@ -26,7 +25,7 @@
                 <div class="checkBut">
                     <div class="checkBut-default">
                         <input type="checkbox" id="checkbox1" checked name="checkBoxRest" ng-click="clickForCheck()" ng-model="checkRestaurant" />
-                        <label for="checkbox1">Restaurants</label>
+                        <label for="checkbox1">Restaurantееееееs</label>
                     </div>
                 </div>
             </div>
@@ -77,8 +76,8 @@
                     <div class="col-md-10 col-sm-9">
                         <h3 class="text-primary">{{business.name}}</h3>
                         <div class="row">
-                            <div class="col-xs-10"> 
-                               
+                            <div class="col-xs-10">
+
                                 <p id="addressInfo">{{business.address}}</p>
                             </div>
                         </div>
