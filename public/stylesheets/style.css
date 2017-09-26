@@ -13,6 +13,11 @@ a {
     padding-left: 50em;
 }
 
+#writeScoreAnchor {
+    cursor: pointer;
+    text-align: center;
+}
+
 #divMain {
     background-color: blue;
     text-align: center;
@@ -44,6 +49,7 @@ a {
         height: 20em;
     }
 }
+
 @media screen and (max-width: 450px) {
     .angular-google-map-container {
         margin: auto;
@@ -221,9 +227,11 @@ li span {
     padding: 1.3em;
     border-radius: 10%;
 }
-#addressInfo{
+
+#addressInfo {
     background-color: lightgreen;
 }
+
 
 /*
 /*.fade {
@@ -252,7 +260,8 @@ li span {
     margin-bottom: 20px;
 }
 
-.form-signin, .form-options {
+.form-signin,
+.form-options {
     max-width: 420px;
     padding: 30px 38px 66px;
     margin: 0 auto;
@@ -261,7 +270,8 @@ li span {
     border-radius: 20px;
 }
 
-.form-signin-heading, .form-opitons-heading{
+.form-signin-heading,
+.form-opitons-heading {
     text-align: center;
     margin-bottom: 30px;
 }
@@ -445,13 +455,16 @@ span.input-group-addon i {
     cursor: pointer;
 }
 
-#writeAReviewA{
- cursor: pointer;
+#writeAReviewA {
+    cursor: pointer;
 }
 
-#searchRes, #nameObj{
+#searchRes,
+#nameObj {
     color: white;
 }
+
+
 /* uses font awesome for social icons */
 
 @import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
@@ -637,15 +650,17 @@ span.input-group-addon i {
     text-align: center;
 }
 
-#cont  {
+#cont {
     display: inline-block;
     width: 100%;
     text-align: center;
-    color: black;   
+    color: black;
 }
-#cont input{
+
+#cont input {
     color: #000
 }
+
 #passVal {
     display: inline-block;
     width: 30%;
@@ -659,6 +674,7 @@ span.input-group-addon i {
     border-radius: 50%;
     margin-bottom: 0.3em;
 }
-#reviewArea{
+
+#reviewArea {
     width: 100%;
 }
