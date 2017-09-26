@@ -32,7 +32,7 @@ app.controller('reviewsController', function($scope, $rootScope, userService, $w
             score: $scope.score,
             collection: $scope.businessItem.type
         };
-        userService.postReq('http://projectxnr.herokuapp.com/score', 'POST', JSON.stringify(data)).then(function(data) {
+        userService.postReq('https://projectxnr.herokuapp.com/score', 'POST', JSON.stringify(data)).then(function(data) {
 
             $scope.reviewForWriting = false;
             $scope.raitingForWriting = false;
