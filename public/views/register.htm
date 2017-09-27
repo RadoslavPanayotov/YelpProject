@@ -1,8 +1,7 @@
-
 <div class="container">
     <div class="row main">
         <div class="main-login main-center">
-        
+
             <form name="regForm" ng-submit="regMe()">
 
                 <div class="form-group">
@@ -10,10 +9,10 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="usernaname" id="username" placeholder="Enter your Name"  ng-model="user.username" required="" />
-                                
+                            <input type="text" class="form-control" name="usernaname" id="username" placeholder="Enter your Name" ng-model="user.username" required="" />
+
                         </div>
-                         <p class="erromMasReg">{{errorUserMessage}}</p>
+                        <p class="erromMasReg">{{errorUserMessage}}</p>
                     </div>
                 </div>
 
@@ -22,19 +21,19 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="email" id="email" placeholder="Enter your Email" ng-model="user.email" required=""/>
+                            <input type="text" class="form-control" name="email" id="email" placeholder="Enter your Email" ng-model="user.email" required="" />
                         </div>
                     </div>
                 </div>
 
-            
+
                 <div class="form-group">
                     <label for="password" class="cols-sm-2 control-label">Password</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></span>
-                            <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" ng-model="user.password" required=""/>
-                            
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" ng-model="user.password" required="" />
+
                         </div>
                         <p class="erromMasReg">{{errorPassMessage}}</p>
                     </div>
@@ -46,26 +45,26 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></span>
                             <input type="password" class="form-control" name="confirm" id="confirm" placeholder="Confirm your Password" required="" ng-model="user.passwordConf" />
-                            
+
                         </div>
                         <p class="erromMasReg">{{errorPassConfMessage}}</p>
                     </div>
                 </div>
 
-                
-                <div class="form-group">
+
+                <!-- <div class="form-group">
                     <label for="checkDiv" class="cols-sm-2 control-label">Would like to be able to add your own business</label>
                     <div id="checkBoxWrapper" class="cols-sm-2">
                         <div id="checkDiv">
                             <input id="typeUser" ng-click="doIfClicked()" name="checkBusiness" type="checkbox" value="Yes" />
                         </div>
-                    </div>
+                    </div> -->
 
-                </div>
-                <div class="form-group">
-                    <button id="createAccount" type="submit" class="btn btn-primary btn-lg btn-block login-button">Create account</button>
-                </div>
-            </form>
         </div>
+        <div class="form-group">
+            <button id="createAccount" type="submit" class="btn btn-primary btn-lg btn-block login-button">Create account</button>
+        </div>
+        </form>
     </div>
+</div>
 </div>

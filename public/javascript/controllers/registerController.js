@@ -1,4 +1,4 @@
-app.controller('register', function ($scope, $rootScope, userService, $window, $location) {
+app.controller('register', function($scope, $rootScope, userService, $window, $location) {
     // If scope.user.type = false means normal user, else business user
 
     $rootScope.showLogin = true;
@@ -16,15 +16,15 @@ app.controller('register', function ($scope, $rootScope, userService, $window, $
     };
 
     $scope.user.type = false;
-    $scope.doIfClicked = function () {
-        if ($scope.user.type) {
-            $scope.user.type = false;
-        } else {
-            $scope.user.type = true;
-        }
-    }
+    // $scope.doIfClicked = function () {
+    //     if ($scope.user.type) {
+    //         $scope.user.type = false;
+    //     } else {
+    //         $scope.user.type = true;
+    //     }
+    // }
 
-    $scope.regMe = function () {
+    $scope.regMe = function() {
         if ($scope.user.username.length > 32) {
             $scope.errorUserMessage = "The username must be less then 32 characters!";
             return;
@@ -44,7 +44,7 @@ app.controller('register', function ($scope, $rootScope, userService, $window, $
             $scope.errorPassConfMessage = "";
         }
         // post request for creating new user
-        userService.postReq('https://projectxnr.herokuapp.com/createUsers', 'POST', JSON.stringify($scope.user)).then(function (data) {
+        userService.postReq('https://projectxnr.herokuapp.com/createUsers', 'POST', JSON.stringify($scope.user)).then(function(data) {
 
             if (data.data.value == "true") {
                 $rootScope.loggedCurrentUser = $scope.user.username;
@@ -56,7 +56,7 @@ app.controller('register', function ($scope, $rootScope, userService, $window, $
             } else {
                 $scope.errorMessage = "There is a user with such a username or an email!"
             }
-        }).catch(function (error, status) {
+        }).catch(function(error, status) {
             $scope.data = {};
             $scope.data.error = { message: error, status: status };
 
